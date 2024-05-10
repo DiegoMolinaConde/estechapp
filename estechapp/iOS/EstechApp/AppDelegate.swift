@@ -8,7 +8,7 @@
 import UIKit
 
 @main
-eclass AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 

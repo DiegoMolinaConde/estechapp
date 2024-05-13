@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,25 @@
 		80DA0F882BD5594F004EBED3 /* ModeloLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA0F872BD5594F004EBED3 /* ModeloLogin.swift */; };
 		80DA0F902BD6C24F004EBED3 /* TabBarprofesorControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA0F8F2BD6C24F004EBED3 /* TabBarprofesorControllerViewController.swift */; };
 		80DA0F922BD6C29B004EBED3 /* TabBarAlumnoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA0F912BD6C29B004EBED3 /* TabBarAlumnoController.swift */; };
+		AD086EC42BF1ADE900BEC852 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EC32BF1ADE900BEC852 /* CustomNavBar.swift */; };
+		AD086EC62BF1ADFB00BEC852 /* CustomNavBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD086EC52BF1ADFB00BEC852 /* CustomNavBar.xib */; };
+		AD086EC92BF1B53000BEC852 /* UIUtils in Frameworks */ = {isa = PBXBuildFile; productRef = AD086EC82BF1B53000BEC852 /* UIUtils */; };
+		AD086ECC2BF1B57C00BEC852 /* BDRModel in Frameworks */ = {isa = PBXBuildFile; productRef = AD086ECB2BF1B57C00BEC852 /* BDRModel */; };
+		AD086ECF2BF1B58D00BEC852 /* BDRCoreNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = AD086ECE2BF1B58D00BEC852 /* BDRCoreNetwork */; };
+		AD086ED22BF1B5A000BEC852 /* BDRUIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = AD086ED12BF1B5A000BEC852 /* BDRUIComponents */; };
+		AD086ED42BF1B5D100BEC852 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086ED32BF1B5D100BEC852 /* LoginPresenter.swift */; };
+		AD086ED82BF1B67A00BEC852 /* EstechAppEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086ED72BF1B67A00BEC852 /* EstechAppEndpoints.swift */; };
+		AD086EDA2BF1B85300BEC852 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086ED92BF1B85300BEC852 /* SessionManager.swift */; };
+		AD086EDC2BF1BA6F00BEC852 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EDB2BF1BA6F00BEC852 /* User.swift */; };
+		AD086EDF2BF1BDD500BEC852 /* SplashInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EDE2BF1BDD500BEC852 /* SplashInitViewController.swift */; };
+		AD086EE12BF1BDF100BEC852 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EE02BF1BDF100BEC852 /* LoginBuilder.swift */; };
+		AD086EE32BF1C2ED00BEC852 /* UserInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EE22BF1C2ED00BEC852 /* UserInfoResponse.swift */; };
+		AD086EE72BF1C5B000BEC852 /* FichajePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EE62BF1C5B000BEC852 /* FichajePresenter.swift */; };
+		AD086EEB2BF1CC8800BEC852 /* CheckInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EEA2BF1CC8800BEC852 /* CheckInResponse.swift */; };
+		AD086EEE2BF1D20D00BEC852 /* HistoryCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EED2BF1D20D00BEC852 /* HistoryCheckInViewController.swift */; };
+		AD086EF12BF1D33B00BEC852 /* CheckInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EF02BF1D33B00BEC852 /* CheckInTableViewCell.swift */; };
+		AD086EF32BF1D41300BEC852 /* HistoryCheckInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EF22BF1D41300BEC852 /* HistoryCheckInPresenter.swift */; };
+		AD086EF52BF1D47500BEC852 /* Fichaje.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EF42BF1D47500BEC852 /* Fichaje.swift */; };
 		AD9B443A2BEDC45900312BD6 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B44392BEDC45900312BD6 /* UIView+Extensions.swift */; };
 		AD9B443F2BEDCFAD00312BD6 /* FichajeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B443E2BEDCFAD00312BD6 /* FichajeViewController.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +51,21 @@
 		80DA0F872BD5594F004EBED3 /* ModeloLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeloLogin.swift; sourceTree = "<group>"; };
 		80DA0F8F2BD6C24F004EBED3 /* TabBarprofesorControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarprofesorControllerViewController.swift; sourceTree = "<group>"; };
 		80DA0F912BD6C29B004EBED3 /* TabBarAlumnoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAlumnoController.swift; sourceTree = "<group>"; };
+		AD086EC32BF1ADE900BEC852 /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
+		AD086EC52BF1ADFB00BEC852 /* CustomNavBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavBar.xib; sourceTree = "<group>"; };
+		AD086ED32BF1B5D100BEC852 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		AD086ED72BF1B67A00BEC852 /* EstechAppEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstechAppEndpoints.swift; sourceTree = "<group>"; };
+		AD086ED92BF1B85300BEC852 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		AD086EDB2BF1BA6F00BEC852 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AD086EDE2BF1BDD500BEC852 /* SplashInitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInitViewController.swift; sourceTree = "<group>"; };
+		AD086EE02BF1BDF100BEC852 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
+		AD086EE22BF1C2ED00BEC852 /* UserInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoResponse.swift; sourceTree = "<group>"; };
+		AD086EE62BF1C5B000BEC852 /* FichajePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichajePresenter.swift; sourceTree = "<group>"; };
+		AD086EEA2BF1CC8800BEC852 /* CheckInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInResponse.swift; sourceTree = "<group>"; };
+		AD086EED2BF1D20D00BEC852 /* HistoryCheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCheckInViewController.swift; sourceTree = "<group>"; };
+		AD086EF02BF1D33B00BEC852 /* CheckInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInTableViewCell.swift; sourceTree = "<group>"; };
+		AD086EF22BF1D41300BEC852 /* HistoryCheckInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCheckInPresenter.swift; sourceTree = "<group>"; };
+		AD086EF42BF1D47500BEC852 /* Fichaje.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fichaje.swift; sourceTree = "<group>"; };
 		AD9B44392BEDC45900312BD6 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		AD9B443E2BEDCFAD00312BD6 /* FichajeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichajeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,6 +75,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD086ECF2BF1B58D00BEC852 /* BDRCoreNetwork in Frameworks */,
+				AD086EC92BF1B53000BEC852 /* UIUtils in Frameworks */,
+				AD086ECC2BF1B57C00BEC852 /* BDRModel in Frameworks */,
+				AD086ED22BF1B5A000BEC852 /* BDRUIComponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +104,7 @@
 		3D8455742B9F7EF000712BBF /* EstechApp */ = {
 			isa = PBXGroup;
 			children = (
+				AD086ED52BF1B66C00BEC852 /* Data */,
 				AD9B443B2BEDCF7000312BD6 /* Presentation */,
 				AD9B44382BEDC44C00312BD6 /* Utils */,
 				AD9B44372BEDC40500312BD6 /* Components */,
@@ -85,14 +124,87 @@
 		80DA0F842BD55912004EBED3 /* Modelos */ = {
 			isa = PBXGroup;
 			children = (
-				80DA0F872BD5594F004EBED3 /* ModeloLogin.swift */,
+				AD086EE52BF1C2FA00BEC852 /* Core */,
+				AD086EE42BF1C2F100BEC852 /* RawResponse */,
 			);
 			path = Modelos;
+			sourceTree = "<group>";
+		};
+		AD086EC22BF1ADC200BEC852 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				AD086EC32BF1ADE900BEC852 /* CustomNavBar.swift */,
+				AD086EC52BF1ADFB00BEC852 /* CustomNavBar.xib */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		AD086ED52BF1B66C00BEC852 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AD086ED62BF1B67000BEC852 /* Endpoints */,
+				AD086ED92BF1B85300BEC852 /* SessionManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		AD086ED62BF1B67000BEC852 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				AD086ED72BF1B67A00BEC852 /* EstechAppEndpoints.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		AD086EDD2BF1BDBB00BEC852 /* CustomSplash */ = {
+			isa = PBXGroup;
+			children = (
+				AD086EDE2BF1BDD500BEC852 /* SplashInitViewController.swift */,
+			);
+			path = CustomSplash;
+			sourceTree = "<group>";
+		};
+		AD086EE42BF1C2F100BEC852 /* RawResponse */ = {
+			isa = PBXGroup;
+			children = (
+				80DA0F872BD5594F004EBED3 /* ModeloLogin.swift */,
+				AD086EE22BF1C2ED00BEC852 /* UserInfoResponse.swift */,
+				AD086EEA2BF1CC8800BEC852 /* CheckInResponse.swift */,
+			);
+			path = RawResponse;
+			sourceTree = "<group>";
+		};
+		AD086EE52BF1C2FA00BEC852 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AD086EDB2BF1BA6F00BEC852 /* User.swift */,
+				AD086EF42BF1D47500BEC852 /* Fichaje.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AD086EEC2BF1D1F400BEC852 /* HistorialCheckIns */ = {
+			isa = PBXGroup;
+			children = (
+				AD086EEF2BF1D32600BEC852 /* Subviews */,
+				AD086EED2BF1D20D00BEC852 /* HistoryCheckInViewController.swift */,
+				AD086EF22BF1D41300BEC852 /* HistoryCheckInPresenter.swift */,
+			);
+			path = HistorialCheckIns;
+			sourceTree = "<group>";
+		};
+		AD086EEF2BF1D32600BEC852 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				AD086EF02BF1D33B00BEC852 /* CheckInTableViewCell.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		AD9B44372BEDC40500312BD6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AD086EC22BF1ADC200BEC852 /* NavigationBar */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -108,6 +220,8 @@
 		AD9B443B2BEDCF7000312BD6 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				AD086EEC2BF1D1F400BEC852 /* HistorialCheckIns */,
+				AD086EDD2BF1BDBB00BEC852 /* CustomSplash */,
 				AD9B443D2BEDCF8900312BD6 /* Fichaje */,
 				AD9B443C2BEDCF7C00312BD6 /* Login */,
 			);
@@ -118,6 +232,8 @@
 			isa = PBXGroup;
 			children = (
 				3D8455792B9F7EF000712BBF /* ViewController.swift */,
+				AD086ED32BF1B5D100BEC852 /* LoginPresenter.swift */,
+				AD086EE02BF1BDF100BEC852 /* LoginBuilder.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -126,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				AD9B443E2BEDCFAD00312BD6 /* FichajeViewController.swift */,
+				AD086EE62BF1C5B000BEC852 /* FichajePresenter.swift */,
 			);
 			path = Fichaje;
 			sourceTree = "<group>";
@@ -146,6 +263,12 @@
 			dependencies = (
 			);
 			name = EstechApp;
+			packageProductDependencies = (
+				AD086EC82BF1B53000BEC852 /* UIUtils */,
+				AD086ECB2BF1B57C00BEC852 /* BDRModel */,
+				AD086ECE2BF1B58D00BEC852 /* BDRCoreNetwork */,
+				AD086ED12BF1B5A000BEC852 /* BDRUIComponents */,
+			);
 			productName = EstechApp;
 			productReference = 3D8455722B9F7EF000712BBF /* EstechApp.app */;
 			productType = "com.apple.product-type.application";
@@ -174,6 +297,12 @@
 				Base,
 			);
 			mainGroup = 3D8455692B9F7EF000712BBF;
+			packageReferences = (
+				AD086EC72BF1B53000BEC852 /* XCLocalSwiftPackageReference "../UIUtils" */,
+				AD086ECA2BF1B57C00BEC852 /* XCLocalSwiftPackageReference "../BDRModel" */,
+				AD086ECD2BF1B58D00BEC852 /* XCLocalSwiftPackageReference "../BDRCoreNetwork" */,
+				AD086ED02BF1B5A000BEC852 /* XCLocalSwiftPackageReference "../BDRUIComponents" */,
+			);
 			productRefGroup = 3D8455732B9F7EF000712BBF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -190,6 +319,7 @@
 			files = (
 				3D84557F2B9F7EF100712BBF /* Assets.xcassets in Resources */,
 				3D8455822B9F7EF100712BBF /* Base in Resources */,
+				AD086EC62BF1ADFB00BEC852 /* CustomNavBar.xib in Resources */,
 				3D84557D2B9F7EF000712BBF /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,14 +331,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD086EDC2BF1BA6F00BEC852 /* User.swift in Sources */,
 				AD9B443A2BEDC45900312BD6 /* UIView+Extensions.swift in Sources */,
 				3D84557A2B9F7EF000712BBF /* ViewController.swift in Sources */,
+				AD086EDA2BF1B85300BEC852 /* SessionManager.swift in Sources */,
+				AD086EEB2BF1CC8800BEC852 /* CheckInResponse.swift in Sources */,
 				80DA0F882BD5594F004EBED3 /* ModeloLogin.swift in Sources */,
+				AD086EF52BF1D47500BEC852 /* Fichaje.swift in Sources */,
+				AD086EC42BF1ADE900BEC852 /* CustomNavBar.swift in Sources */,
+				AD086ED42BF1B5D100BEC852 /* LoginPresenter.swift in Sources */,
 				80DA0F902BD6C24F004EBED3 /* TabBarprofesorControllerViewController.swift in Sources */,
+				AD086EF12BF1D33B00BEC852 /* CheckInTableViewCell.swift in Sources */,
+				AD086EE72BF1C5B000BEC852 /* FichajePresenter.swift in Sources */,
 				80DA0F922BD6C29B004EBED3 /* TabBarAlumnoController.swift in Sources */,
 				3D8455762B9F7EF000712BBF /* AppDelegate.swift in Sources */,
 				3D8455782B9F7EF000712BBF /* SceneDelegate.swift in Sources */,
+				AD086EEE2BF1D20D00BEC852 /* HistoryCheckInViewController.swift in Sources */,
+				AD086EE32BF1C2ED00BEC852 /* UserInfoResponse.swift in Sources */,
 				AD9B443F2BEDCFAD00312BD6 /* FichajeViewController.swift in Sources */,
+				AD086EE12BF1BDF100BEC852 /* LoginBuilder.swift in Sources */,
+				AD086ED82BF1B67A00BEC852 /* EstechAppEndpoints.swift in Sources */,
+				AD086EDF2BF1BDD500BEC852 /* SplashInitViewController.swift in Sources */,
+				AD086EF32BF1D41300BEC852 /* HistoryCheckInPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +581,44 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		AD086EC72BF1B53000BEC852 /* XCLocalSwiftPackageReference "../UIUtils" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../UIUtils;
+		};
+		AD086ECA2BF1B57C00BEC852 /* XCLocalSwiftPackageReference "../BDRModel" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../BDRModel;
+		};
+		AD086ECD2BF1B58D00BEC852 /* XCLocalSwiftPackageReference "../BDRCoreNetwork" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../BDRCoreNetwork;
+		};
+		AD086ED02BF1B5A000BEC852 /* XCLocalSwiftPackageReference "../BDRUIComponents" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../BDRUIComponents;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AD086EC82BF1B53000BEC852 /* UIUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UIUtils;
+		};
+		AD086ECB2BF1B57C00BEC852 /* BDRModel */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BDRModel;
+		};
+		AD086ECE2BF1B58D00BEC852 /* BDRCoreNetwork */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BDRCoreNetwork;
+		};
+		AD086ED12BF1B5A000BEC852 /* BDRUIComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BDRUIComponents;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3D84556A2B9F7EF000712BBF /* Project object */;
 }

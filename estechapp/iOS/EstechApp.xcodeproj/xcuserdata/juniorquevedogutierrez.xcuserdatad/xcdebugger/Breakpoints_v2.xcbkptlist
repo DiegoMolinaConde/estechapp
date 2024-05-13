@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "DC58A067-A6F9-4C2E-B4A8-D86589060A00"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E0B8F56F-3AC7-4E0A-BDC6-A4BD81C1957A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EstechApp/Presentation/Login/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "IniciarSesion(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E0B8F56F-3AC7-4E0A-BDC6-A4BD81C1957A - e8089ec09d89008a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EstechApp.ViewController.IniciarSesion(Any) -&gt; ()"
+                  moduleName = "EstechApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juniorquevedogutierrez/Documents/ios-projects/estechapp/estechapp/iOS/EstechApp/Presentation/Login/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "840">
+               </Location>
+               <Location
+                  uuid = "E0B8F56F-3AC7-4E0A-BDC6-A4BD81C1957A - e8089ec09d89008a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EstechApp.ViewController.IniciarSesion(Any) -&gt; ()"
+                  moduleName = "EstechApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juniorquevedogutierrez/Documents/ios-projects/estechapp/estechapp/iOS/EstechApp/Presentation/Login/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "880">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2653B7B9-510A-440D-99EE-83B7BCD37E8F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EstechApp/Presentation/Login/LoginPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "getUserInfo(email:role:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1E4D3E13-41C4-4996-90C4-4B47888D6EB0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EstechApp/Presentation/Login/LoginPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "getUserInfo(email:role:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1E4D3E13-41C4-4996-90C4-4B47888D6EB0 - ac06b48ac3476413"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Any, Swift.Error&gt;) -&gt; () in EstechApp.LoginPresenterDefault.getUserInfo(email: Swift.String, role: EstechApp.SessionRole) -&gt; ()"
+                  moduleName = "EstechApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juniorquevedogutierrez/Documents/ios-projects/estechapp/estechapp/iOS/EstechApp/Presentation/Login/LoginPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "2520">
+               </Location>
+               <Location
+                  uuid = "1E4D3E13-41C4-4996-90C4-4B47888D6EB0 - ac06b48ac3476413"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Any, Swift.Error&gt;) -&gt; () in EstechApp.LoginPresenterDefault.getUserInfo(email: Swift.String, role: EstechApp.SessionRole) -&gt; ()"
+                  moduleName = "EstechApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juniorquevedogutierrez/Documents/ios-projects/estechapp/estechapp/iOS/EstechApp/Presentation/Login/LoginPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "2484">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

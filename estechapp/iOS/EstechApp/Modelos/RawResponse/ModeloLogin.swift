@@ -18,3 +18,4 @@ struct LoginResponse: Codable {
 struct Role: Codable {
     let authority: String
 }
+

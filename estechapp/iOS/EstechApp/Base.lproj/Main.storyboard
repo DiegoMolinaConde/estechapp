@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jfs-lr-bya">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JCs-6K-4jH">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="q2h-jd-ZXc">
             <objects>
-                <viewController id="jfs-lr-bya" customClass="ViewController" customModule="EstechApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="jfs-lr-bya" customClass="ViewController" customModule="EstechApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Fr-er-cRS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,7 +113,33 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ni-UE-lTk" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2038" y="1549"/>
+            <point key="canvasLocation" x="-1396" y="1541"/>
+        </scene>
+        <!--Splash Init View Controller-->
+        <scene sceneID="I5C-kL-Jl6">
+            <objects>
+                <viewController id="JCs-6K-4jH" customClass="SplashInitViewController" customModule="EstechApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6ua-uO-qFd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ESTECH_logo_cuadradopng" translatesAutoresizingMaskIntoConstraints="NO" id="333-Ar-QA3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="B0s-Je-G7u"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="B0s-Je-G7u" firstAttribute="trailing" secondItem="333-Ar-QA3" secondAttribute="trailing" id="AQv-WB-jz7"/>
+                            <constraint firstItem="333-Ar-QA3" firstAttribute="top" secondItem="6ua-uO-qFd" secondAttribute="top" id="d9e-Fd-7xF"/>
+                            <constraint firstItem="B0s-Je-G7u" firstAttribute="bottom" secondItem="333-Ar-QA3" secondAttribute="bottom" id="rTf-gt-K0y"/>
+                            <constraint firstItem="333-Ar-QA3" firstAttribute="leading" secondItem="6ua-uO-qFd" secondAttribute="leading" id="yw4-F3-Vot"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fAM-XT-6WP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2038" y="1548"/>
         </scene>
         <!--Tab Bar Alumno Controller-->
         <scene sceneID="aZs-KQ-RTb">
@@ -225,37 +251,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="TAO-q4-MGF">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bzq-se-KyE">
-                                        <rect key="frame" x="0.0" y="33" width="39.666666666666664" height="34.333333333333343"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system" title=""/>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Consulta fichajes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXV-ri-dQM">
-                                        <rect key="frame" x="112.33333333333333" y="40" width="130.33333333333337" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ESTECH_logo_cuadradopng" translatesAutoresizingMaskIntoConstraints="NO" id="dJ5-B6-7ol">
-                                        <rect key="frame" x="295" y="10" width="80" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="n23-yM-cfW"/>
-                                            <constraint firstAttribute="height" constant="80" id="vTc-KR-TIC"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Kqx-yG-i5k"/>
-                                </constraints>
-                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTv-5B-VZ1">
-                                <rect key="frame" x="10" y="144.33333333333331" width="355" height="613.66666666666674"/>
+                                <rect key="frame" x="10" y="173.33333333333331" width="355" height="535.66666666666674"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="K0w-Rh-r4v">
-                                        <rect key="frame" x="20" y="20" width="315" height="573.66666666666663"/>
+                                        <rect key="frame" x="20" y="20.000000000000028" width="315" height="495.66666666666674"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
@@ -267,31 +267,40 @@
                                     <constraint firstItem="K0w-Rh-r4v" firstAttribute="leading" secondItem="wTv-5B-VZ1" secondAttribute="leading" constant="20" symbolic="YES" id="ad0-BH-36m"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Últimos fichajes" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmL-Ka-K2e">
-                                <rect key="frame" x="25" y="108" width="121" height="20.333333333333343"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Últimos fichajes" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmL-Ka-K2e">
+                                <rect key="frame" x="12" y="137" width="121" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6CW-8G-LxQ" customClass="CustomNavBar" customModule="EstechApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="375" height="75"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="ddI-GZ-rRV"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6hh-11-Pme"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="TAO-q4-MGF" firstAttribute="leading" secondItem="6hh-11-Pme" secondAttribute="leading" id="4vm-jS-DYM"/>
+                            <constraint firstItem="6CW-8G-LxQ" firstAttribute="top" secondItem="6hh-11-Pme" secondAttribute="top" id="5ht-mq-0HS"/>
                             <constraint firstItem="6hh-11-Pme" firstAttribute="trailing" secondItem="wTv-5B-VZ1" secondAttribute="trailing" constant="10" id="CcB-22-88F"/>
                             <constraint firstItem="wTv-5B-VZ1" firstAttribute="top" secondItem="jmL-Ka-K2e" secondAttribute="bottom" constant="16" id="Dzo-Pb-DIu"/>
+                            <constraint firstItem="jmL-Ka-K2e" firstAttribute="top" secondItem="6CW-8G-LxQ" secondAttribute="bottom" constant="12" id="K0t-f6-yTa"/>
                             <constraint firstItem="6hh-11-Pme" firstAttribute="bottom" secondItem="wTv-5B-VZ1" secondAttribute="bottom" constant="20" id="Lik-M9-wMH"/>
-                            <constraint firstItem="TAO-q4-MGF" firstAttribute="top" secondItem="IQX-Si-LpO" secondAttribute="top" id="TBg-kd-xQd"/>
-                            <constraint firstItem="jmL-Ka-K2e" firstAttribute="top" secondItem="TAO-q4-MGF" secondAttribute="bottom" constant="8" symbolic="YES" id="WMG-wP-Nqe"/>
                             <constraint firstItem="wTv-5B-VZ1" firstAttribute="leading" secondItem="6hh-11-Pme" secondAttribute="leading" constant="10" id="aHG-Tl-GGJ"/>
-                            <constraint firstAttribute="trailing" secondItem="TAO-q4-MGF" secondAttribute="trailing" id="ykz-bW-psC"/>
+                            <constraint firstItem="6hh-11-Pme" firstAttribute="trailing" secondItem="6CW-8G-LxQ" secondAttribute="trailing" id="btx-3W-F41"/>
+                            <constraint firstItem="jmL-Ka-K2e" firstAttribute="leading" secondItem="6hh-11-Pme" secondAttribute="leading" constant="12" id="jeB-gr-5pD"/>
+                            <constraint firstItem="6CW-8G-LxQ" firstAttribute="leading" secondItem="6hh-11-Pme" secondAttribute="leading" id="yYS-Fc-ere"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" selectedImage="calendar" catalog="system" id="MFz-dV-JC6"/>
+                    <navigationItem key="navigationItem" id="b0t-PG-tMq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lpc-Vd-y80" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1693" y="-1152"/>
+            <point key="canvasLocation" x="1573.5999999999999" y="2882.5123152709361"/>
         </scene>
         <!--Fichaje-->
         <scene sceneID="xi7-gP-Lcc">
@@ -801,6 +810,9 @@
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Vjh-Tc-ODw" kind="show" id="haB-86-pOT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="frq-cN-8HD"/>
@@ -838,16 +850,15 @@
     <resources>
         <image name="ESTECH_logo_cuadradopng" width="176.66667175292969" height="179.33332824707031"/>
         <image name="agreement" width="25.333333969116211" height="25.333333969116211"/>
-        <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="calendar" width="25.333333969116211" height="25"/>
-        <image name="chevron.backward" catalog="system" width="97" height="128"/>
+        <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="entrada-removebg-preview" width="500" height="500"/>
         <image name="group" width="25.333333969116211" height="25.333333969116211"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.6589999794960022" blue="0.76499998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Border">
-            <color red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.85100001096725464" green="0.85100001096725464" blue="0.85100001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -856,7 +867,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemMintColor">
-            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

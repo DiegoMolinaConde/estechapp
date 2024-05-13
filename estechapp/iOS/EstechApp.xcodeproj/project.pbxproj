@@ -29,6 +29,12 @@
 		AD086EDF2BF1BDD500BEC852 /* SplashInitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EDE2BF1BDD500BEC852 /* SplashInitViewController.swift */; };
 		AD086EE12BF1BDF100BEC852 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EE02BF1BDF100BEC852 /* LoginBuilder.swift */; };
 		AD086EE32BF1C2ED00BEC852 /* UserInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EE22BF1C2ED00BEC852 /* UserInfoResponse.swift */; };
+		AD086EE72BF1C5B000BEC852 /* FichajePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EE62BF1C5B000BEC852 /* FichajePresenter.swift */; };
+		AD086EEB2BF1CC8800BEC852 /* CheckInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EEA2BF1CC8800BEC852 /* CheckInResponse.swift */; };
+		AD086EEE2BF1D20D00BEC852 /* HistoryCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EED2BF1D20D00BEC852 /* HistoryCheckInViewController.swift */; };
+		AD086EF12BF1D33B00BEC852 /* CheckInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EF02BF1D33B00BEC852 /* CheckInTableViewCell.swift */; };
+		AD086EF32BF1D41300BEC852 /* HistoryCheckInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EF22BF1D41300BEC852 /* HistoryCheckInPresenter.swift */; };
+		AD086EF52BF1D47500BEC852 /* Fichaje.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EF42BF1D47500BEC852 /* Fichaje.swift */; };
 		AD9B443A2BEDC45900312BD6 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B44392BEDC45900312BD6 /* UIView+Extensions.swift */; };
 		AD9B443F2BEDCFAD00312BD6 /* FichajeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B443E2BEDCFAD00312BD6 /* FichajeViewController.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +60,12 @@
 		AD086EDE2BF1BDD500BEC852 /* SplashInitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInitViewController.swift; sourceTree = "<group>"; };
 		AD086EE02BF1BDF100BEC852 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
 		AD086EE22BF1C2ED00BEC852 /* UserInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoResponse.swift; sourceTree = "<group>"; };
+		AD086EE62BF1C5B000BEC852 /* FichajePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichajePresenter.swift; sourceTree = "<group>"; };
+		AD086EEA2BF1CC8800BEC852 /* CheckInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInResponse.swift; sourceTree = "<group>"; };
+		AD086EED2BF1D20D00BEC852 /* HistoryCheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCheckInViewController.swift; sourceTree = "<group>"; };
+		AD086EF02BF1D33B00BEC852 /* CheckInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInTableViewCell.swift; sourceTree = "<group>"; };
+		AD086EF22BF1D41300BEC852 /* HistoryCheckInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCheckInPresenter.swift; sourceTree = "<group>"; };
+		AD086EF42BF1D47500BEC852 /* Fichaje.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fichaje.swift; sourceTree = "<group>"; };
 		AD9B44392BEDC45900312BD6 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		AD9B443E2BEDCFAD00312BD6 /* FichajeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichajeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +169,7 @@
 			children = (
 				80DA0F872BD5594F004EBED3 /* ModeloLogin.swift */,
 				AD086EE22BF1C2ED00BEC852 /* UserInfoResponse.swift */,
+				AD086EEA2BF1CC8800BEC852 /* CheckInResponse.swift */,
 			);
 			path = RawResponse;
 			sourceTree = "<group>";
@@ -165,8 +178,27 @@
 			isa = PBXGroup;
 			children = (
 				AD086EDB2BF1BA6F00BEC852 /* User.swift */,
+				AD086EF42BF1D47500BEC852 /* Fichaje.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		AD086EEC2BF1D1F400BEC852 /* HistorialCheckIns */ = {
+			isa = PBXGroup;
+			children = (
+				AD086EEF2BF1D32600BEC852 /* Subviews */,
+				AD086EED2BF1D20D00BEC852 /* HistoryCheckInViewController.swift */,
+				AD086EF22BF1D41300BEC852 /* HistoryCheckInPresenter.swift */,
+			);
+			path = HistorialCheckIns;
+			sourceTree = "<group>";
+		};
+		AD086EEF2BF1D32600BEC852 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				AD086EF02BF1D33B00BEC852 /* CheckInTableViewCell.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		AD9B44372BEDC40500312BD6 /* Components */ = {
@@ -188,6 +220,7 @@
 		AD9B443B2BEDCF7000312BD6 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				AD086EEC2BF1D1F400BEC852 /* HistorialCheckIns */,
 				AD086EDD2BF1BDBB00BEC852 /* CustomSplash */,
 				AD9B443D2BEDCF8900312BD6 /* Fichaje */,
 				AD9B443C2BEDCF7C00312BD6 /* Login */,
@@ -209,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				AD9B443E2BEDCFAD00312BD6 /* FichajeViewController.swift */,
+				AD086EE62BF1C5B000BEC852 /* FichajePresenter.swift */,
 			);
 			path = Fichaje;
 			sourceTree = "<group>";
@@ -301,18 +335,24 @@
 				AD9B443A2BEDC45900312BD6 /* UIView+Extensions.swift in Sources */,
 				3D84557A2B9F7EF000712BBF /* ViewController.swift in Sources */,
 				AD086EDA2BF1B85300BEC852 /* SessionManager.swift in Sources */,
+				AD086EEB2BF1CC8800BEC852 /* CheckInResponse.swift in Sources */,
 				80DA0F882BD5594F004EBED3 /* ModeloLogin.swift in Sources */,
+				AD086EF52BF1D47500BEC852 /* Fichaje.swift in Sources */,
 				AD086EC42BF1ADE900BEC852 /* CustomNavBar.swift in Sources */,
 				AD086ED42BF1B5D100BEC852 /* LoginPresenter.swift in Sources */,
 				80DA0F902BD6C24F004EBED3 /* TabBarprofesorControllerViewController.swift in Sources */,
+				AD086EF12BF1D33B00BEC852 /* CheckInTableViewCell.swift in Sources */,
+				AD086EE72BF1C5B000BEC852 /* FichajePresenter.swift in Sources */,
 				80DA0F922BD6C29B004EBED3 /* TabBarAlumnoController.swift in Sources */,
 				3D8455762B9F7EF000712BBF /* AppDelegate.swift in Sources */,
 				3D8455782B9F7EF000712BBF /* SceneDelegate.swift in Sources */,
+				AD086EEE2BF1D20D00BEC852 /* HistoryCheckInViewController.swift in Sources */,
 				AD086EE32BF1C2ED00BEC852 /* UserInfoResponse.swift in Sources */,
 				AD9B443F2BEDCFAD00312BD6 /* FichajeViewController.swift in Sources */,
 				AD086EE12BF1BDF100BEC852 /* LoginBuilder.swift in Sources */,
 				AD086ED82BF1B67A00BEC852 /* EstechAppEndpoints.swift in Sources */,
 				AD086EDF2BF1BDD500BEC852 /* SplashInitViewController.swift in Sources */,
+				AD086EF32BF1D41300BEC852 /* HistoryCheckInPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

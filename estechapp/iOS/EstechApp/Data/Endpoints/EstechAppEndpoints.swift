@@ -12,6 +12,8 @@ import Alamofire
 enum EstechAppEndpoints  {
     case login(Parameters)
     case userInfo(Parameters)
+    case addChekIn(Parameters)
+    case listCheckins
     
     var path: String {
         switch self {
@@ -19,13 +21,19 @@ enum EstechAppEndpoints  {
             return "login"
         case .userInfo(_):
             return "api/user/user-info"
+        case .addChekIn:
+            return "api/check-in/new"
+        case .listCheckins:
+            return "api/check-in"
         }
     }
 
     var method: HTTPMethod {
         switch self {
-        case .login, .userInfo:
+        case .login, .userInfo, .addChekIn:
             return .post
+        case .listCheckins:
+            return .get
         }
     }
     
@@ -35,6 +43,10 @@ enum EstechAppEndpoints  {
             return parameters
         case .userInfo(let parameters):
             return parameters
+        case .addChekIn(let parameters):
+            return parameters
+        case .listCheckins:
+            return nil
         }
     }
 }

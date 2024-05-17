@@ -24,4 +24,10 @@ class CheckInTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func populate(_ fichaje: Fichaje) {
+        hour.text = fichaje.hour
+        year.text = fichaje.year.description
+        month.text = fichaje.month
+        day.text = fichaje.day.description
+    }
 }

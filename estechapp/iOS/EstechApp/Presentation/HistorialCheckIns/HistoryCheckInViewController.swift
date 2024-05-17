@@ -56,7 +56,9 @@ extension HistoryCheckInViewController: UITableViewDataSource, UITableViewDelega
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CheckInTableViewCell", for: indexPath) as? CheckInTableViewCell else {
             return UITableViewCell()
         }
-        
+        cell.selectionStyle = .none
+        cell.backgroundColor = indexPath.row%2 == 0 ? .white : .lightGray
+        cell.populate(checkIn[indexPath.row])
         return cell
     }
     

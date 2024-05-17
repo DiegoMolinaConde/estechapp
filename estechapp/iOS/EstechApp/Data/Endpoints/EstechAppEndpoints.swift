@@ -14,6 +14,7 @@ enum EstechAppEndpoints  {
     case userInfo(Parameters)
     case addChekIn(Parameters)
     case listCheckins
+    case listMentoringsByTeacher(id: Int)
     
     var path: String {
         switch self {
@@ -25,6 +26,8 @@ enum EstechAppEndpoints  {
             return "api/check-in/new"
         case .listCheckins:
             return "api/check-in"
+        case .listMentoringsByTeacher(let id):
+            return "api/mentoring/by-teacher/\(id)"
         }
     }
 
@@ -32,7 +35,7 @@ enum EstechAppEndpoints  {
         switch self {
         case .login, .userInfo, .addChekIn:
             return .post
-        case .listCheckins:
+        case .listCheckins, .listMentoringsByTeacher:
             return .get
         }
     }
@@ -45,7 +48,7 @@ enum EstechAppEndpoints  {
             return parameters
         case .addChekIn(let parameters):
             return parameters
-        case .listCheckins:
+        case .listCheckins, .listMentoringsByTeacher:
             return nil
         }
     }

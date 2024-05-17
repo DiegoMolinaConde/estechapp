@@ -7,6 +7,7 @@
 
 import Foundation
 import BDRCoreNetwork
+import BDRModel
 
 protocol HistoryCheckInPresenter {
     var view: HistoryCheckinView? { get set }
@@ -40,11 +41,27 @@ class HistoryCheckInPresenterDefault: HistoryCheckInPresenter {
                         return
                     }
                     
-                    let results = response.map({ item in
-                        Fichaje.init(day: 1, month: 1, year: 1, hour: "10:12")
+                    let results = response.map({
+                        item in
+                        if let date = DateFormatter.sharedFormatter.dateFromString(item.date, withFormat: kServerDateFormatter) {
+                            let calendarDate = Calendar.current.dateComponents([.day, .year, .month], from: date)
+                            
+                            
+                            
+                           return Fichaje(
+                                day: calendarDate.day ?? 0,
+                                month: date.month,
+                                year: calendarDate.year ?? 0,
+                                hour: DateFormatter.sharedFormatter.stringFromDate(date, withFormat: kHour24Formatter)
+                            )
+                        } else {
+                            return Fichaje(day: 0, month: "-", year: 0, hour: "--:--")
+
+                        }
+                     
                     })
                     
-                    self?.view?.show(checkIn: results);
+                    self?.view?.show(checkIn: results)
                 case .failure(let error):
                     self?.view?.showLoading(isActive: false)
                     self?.view?.showError(message: error.localizedDescription)
@@ -53,4 +70,25 @@ class HistoryCheckInPresenterDefault: HistoryCheckInPresenter {
     }
     
     
+}
+extension Date {
+    var month: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
+        dateFormatter.dateFormat = "MMMM"
+        return dateFormatter.string(from: self)
+    }
+    
+    var date: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd"
+        return dateFormatter.string(from: self)
+    }
+    
+    var day: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
+        dateFormatter.dateFormat = "EEEE"
+        return dateFormatter.string(from: self)
+    }
 }

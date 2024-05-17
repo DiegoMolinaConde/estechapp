@@ -35,6 +35,9 @@
 		AD086EF12BF1D33B00BEC852 /* CheckInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EF02BF1D33B00BEC852 /* CheckInTableViewCell.swift */; };
 		AD086EF32BF1D41300BEC852 /* HistoryCheckInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EF22BF1D41300BEC852 /* HistoryCheckInPresenter.swift */; };
 		AD086EF52BF1D47500BEC852 /* Fichaje.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD086EF42BF1D47500BEC852 /* Fichaje.swift */; };
+		AD96B5712BF7BA9400378E6B /* Mentoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD96B5702BF7BA9400378E6B /* Mentoring.swift */; };
+		AD96B5732BF7BB3600378E6B /* MentoringTeacherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD96B5722BF7BB3600378E6B /* MentoringTeacherResponse.swift */; };
+		AD96B5762BF7BD4000378E6B /* MentoringTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD96B5752BF7BD4000378E6B /* MentoringTableViewCell.swift */; };
 		AD9B443A2BEDC45900312BD6 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B44392BEDC45900312BD6 /* UIView+Extensions.swift */; };
 		AD9B443F2BEDCFAD00312BD6 /* FichajeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B443E2BEDCFAD00312BD6 /* FichajeViewController.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +69,9 @@
 		AD086EF02BF1D33B00BEC852 /* CheckInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInTableViewCell.swift; sourceTree = "<group>"; };
 		AD086EF22BF1D41300BEC852 /* HistoryCheckInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCheckInPresenter.swift; sourceTree = "<group>"; };
 		AD086EF42BF1D47500BEC852 /* Fichaje.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fichaje.swift; sourceTree = "<group>"; };
+		AD96B5702BF7BA9400378E6B /* Mentoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mentoring.swift; sourceTree = "<group>"; };
+		AD96B5722BF7BB3600378E6B /* MentoringTeacherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentoringTeacherResponse.swift; sourceTree = "<group>"; };
+		AD96B5752BF7BD4000378E6B /* MentoringTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentoringTableViewCell.swift; sourceTree = "<group>"; };
 		AD9B44392BEDC45900312BD6 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		AD9B443E2BEDCFAD00312BD6 /* FichajeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichajeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,6 +176,7 @@
 				80DA0F872BD5594F004EBED3 /* ModeloLogin.swift */,
 				AD086EE22BF1C2ED00BEC852 /* UserInfoResponse.swift */,
 				AD086EEA2BF1CC8800BEC852 /* CheckInResponse.swift */,
+				AD96B5722BF7BB3600378E6B /* MentoringTeacherResponse.swift */,
 			);
 			path = RawResponse;
 			sourceTree = "<group>";
@@ -179,6 +186,7 @@
 			children = (
 				AD086EDB2BF1BA6F00BEC852 /* User.swift */,
 				AD086EF42BF1D47500BEC852 /* Fichaje.swift */,
+				AD96B5702BF7BA9400378E6B /* Mentoring.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -197,6 +205,14 @@
 			isa = PBXGroup;
 			children = (
 				AD086EF02BF1D33B00BEC852 /* CheckInTableViewCell.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		AD96B5742BF7BD1900378E6B /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				AD96B5752BF7BD4000378E6B /* MentoringTableViewCell.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -241,6 +257,7 @@
 		AD9B443D2BEDCF8900312BD6 /* Fichaje */ = {
 			isa = PBXGroup;
 			children = (
+				AD96B5742BF7BD1900378E6B /* Subviews */,
 				AD9B443E2BEDCFAD00312BD6 /* FichajeViewController.swift */,
 				AD086EE62BF1C5B000BEC852 /* FichajePresenter.swift */,
 			);
@@ -343,6 +360,7 @@
 				80DA0F902BD6C24F004EBED3 /* TabBarprofesorControllerViewController.swift in Sources */,
 				AD086EF12BF1D33B00BEC852 /* CheckInTableViewCell.swift in Sources */,
 				AD086EE72BF1C5B000BEC852 /* FichajePresenter.swift in Sources */,
+				AD96B5712BF7BA9400378E6B /* Mentoring.swift in Sources */,
 				80DA0F922BD6C29B004EBED3 /* TabBarAlumnoController.swift in Sources */,
 				3D8455762B9F7EF000712BBF /* AppDelegate.swift in Sources */,
 				3D8455782B9F7EF000712BBF /* SceneDelegate.swift in Sources */,
@@ -352,7 +370,9 @@
 				AD086EE12BF1BDF100BEC852 /* LoginBuilder.swift in Sources */,
 				AD086ED82BF1B67A00BEC852 /* EstechAppEndpoints.swift in Sources */,
 				AD086EDF2BF1BDD500BEC852 /* SplashInitViewController.swift in Sources */,
+				AD96B5762BF7BD4000378E6B /* MentoringTableViewCell.swift in Sources */,
 				AD086EF32BF1D41300BEC852 /* HistoryCheckInPresenter.swift in Sources */,
+				AD96B5732BF7BB3600378E6B /* MentoringTeacherResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

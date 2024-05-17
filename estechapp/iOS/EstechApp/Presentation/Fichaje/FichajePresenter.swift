@@ -11,7 +11,7 @@ import BDRCoreNetwork
 
 protocol FichajePresenter: AnyObject {
     var view: FichajeView? { get set } 
-    func fetchTutorias()
+    func fetchMentorings()
     func fetchHorarios()
     func fetchInfoUser()
     func fetchAddCheckin()
@@ -28,8 +28,41 @@ class FichajePresenterDefault: FichajePresenter {
         self.session = session
     }
     
-    func fetchTutorias() {
-        
+    func fetchMentorings() {
+        guard let userID = session.user?.id else {
+            return
+        }
+        let endpoint = EstechAppEndpoints.listMentoringsByTeacher(id: userID)
+        networkRequest
+            .setEndpoint(endpoint.path, .v5)
+            .setHttpMethod(endpoint.method)
+            .setParameter(endpoint.parameters)
+            .subscribeAndReceivedData{ [weak self] (result) in
+                switch result {
+                case .success(let dataRaw):
+                    guard let raw = dataRaw as? Data,
+                          let response = [MentoringTeacherResponse].decodeJsonData(raw) else {
+                        self?.view?.showLoading(isActive: false)
+                        self?.view?.showError(message: "Error al decodificar la respuesta del servidor")
+                        return
+                    }
+                    
+                    let mappedMentorings = response.map { rawData in
+                        Mentoring(
+                            id: rawData.id,
+                            roomId: rawData.roomId ?? 0,
+                            date: DateFormatter.sharedFormatter.dateFromString(rawData.date ?? "", withFormat: kServerDateFormatter) ?? Date(),
+                            status: MentoringStatus(rawValue: rawData.status ?? "") ?? .pending,
+                            teacherId: rawData.teacherId,
+                            studentId: rawData.studentId
+                        )
+                    }
+                    self?.view?.showMentoringByTeacher(mappedMentorings)
+                case .failure(let error):
+                    self?.view?.showLoading(isActive: false)
+                    self?.view?.showError(message: error.localizedDescription)
+                }
+            }
     }
     
     func fetchHorarios() {

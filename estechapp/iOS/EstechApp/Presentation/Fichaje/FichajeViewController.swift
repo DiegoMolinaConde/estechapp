@@ -14,6 +14,7 @@ protocol FichajeView: AnyObject  {
     
     func showName(name: String)
     func showStateCheckIn(isCheckIn: Bool)
+    func showMentoringByTeacher(_ data: [Mentoring])
 }
 
 class FichajeViewController: UIViewController {
@@ -52,10 +53,17 @@ class FichajeViewController: UIViewController {
     
     var presenter: FichajePresenter = FichajePresenterDefault()
 
+    var teacherMentoring: [Mentoring] = [] {
+        didSet {
+            tutoriasTableView.reloadData()
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.view = self
-        presenter.fetchTutorias()
+        presenter.fetchMentorings()
         presenter.fetchHorarios()
         presenter.fetchInfoUser()
     }
@@ -70,17 +78,30 @@ class FichajeViewController: UIViewController {
 
 extension FichajeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return teacherMentoring.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MentoringTableViewCell", for: indexPath) as? MentoringTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.backgroundColor = indexPath.row%2 == 0 ? .white : .lightGray
+        cell.selectionStyle = .none
+        cell.populate(teacherMentoring[indexPath.row])
+        return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 48
+    }
     
 }
 
 extension FichajeViewController: FichajeView {
+    func showMentoringByTeacher(_ data: [Mentoring]) {
+        self.teacherMentoring = data
+    }
+    
     func showStateCheckIn(isCheckIn: Bool) {
         checkInImage.image = UIImage(named: isCheckIn ? "salida" : "entrada")
     }

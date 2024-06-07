@@ -56,7 +56,7 @@ extension ViewController: LoginView {
     }
     
     func navigateToTeacherFlow() {
-        self.navigateToTabBarController(withIdentifier: "StudentController", token: "")
+        self.navigateToTabBarController(withIdentifier: "TeacherController", token: "")
     }
     
     func showError(message: String) {

@@ -26,6 +26,7 @@ class HistoryCheckInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.view = self
+        navBar.setTitle("Consulta Fichajes")
         navBar.setup(context: self)
         presenter.fetchHistory()
         // Do any additional setup after loading the view.

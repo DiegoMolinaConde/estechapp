@@ -35,6 +35,8 @@ class GroupsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navBar.hideBackButton()
+        navBar.setTitle("Grupos")
         todayLabel.text = DateFormatter.sharedFormatter.stringFromDate(Date(), withFormat: prettyFormat)
     }
 }

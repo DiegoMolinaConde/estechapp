@@ -15,7 +15,9 @@ enum EstechAppEndpoints  {
     case addChekIn(Parameters)
     case listCheckins
     case listMentoringsByTeacher(id: Int)
-    
+    case updateMentoring(id: Int, Parameters)
+    case createeMentoring(Parameters)
+
     var path: String {
         switch self {
         case .login:
@@ -28,13 +30,19 @@ enum EstechAppEndpoints  {
             return "api/check-in"
         case .listMentoringsByTeacher(let id):
             return "api/mentoring/by-teacher/\(id)"
+        case .updateMentoring(id: let id, _):
+            return "api/mentoring/"
+        case .createeMentoring(_):
+            return "api/mentoring/"
         }
     }
 
     var method: HTTPMethod {
         switch self {
-        case .login, .userInfo, .addChekIn:
+        case .login, .userInfo, .addChekIn, .createeMentoring:
             return .post
+        case .updateMentoring:
+            return .put
         case .listCheckins, .listMentoringsByTeacher:
             return .get
         }
@@ -47,6 +55,10 @@ enum EstechAppEndpoints  {
         case .userInfo(let parameters):
             return parameters
         case .addChekIn(let parameters):
+            return parameters
+        case .createeMentoring(let parameters):
+            return parameters
+        case .updateMentoring(_, let parameters):
             return parameters
         case .listCheckins, .listMentoringsByTeacher:
             return nil

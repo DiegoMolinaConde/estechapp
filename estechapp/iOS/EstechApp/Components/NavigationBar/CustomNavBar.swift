@@ -11,9 +11,10 @@ import UIKit
 @IBDesignable
 class CustomNavBar: UIView {
     
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var title: UILabel!
     @IBOutlet weak var view: UIView!
     weak var context: UIViewController?
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         nibSetup()
@@ -48,6 +49,14 @@ class CustomNavBar: UIView {
     }
     @IBAction func back(_ sender: Any) {
         context?.navigationController?.popViewController(animated: true)
+    }
+    
+    public func hideBackButton() {
+        backButton.isHidden = true
+    }
+    
+    public func setTitle(_ titleMsg: String) {
+        title.text = titleMsg
     }
     
 }

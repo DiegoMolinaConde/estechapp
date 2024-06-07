@@ -12,9 +12,11 @@ import BDRModel
 protocol MentoringPresenter: AnyObject {
     var view: MentoringView? { get set }
     func fetchMentorings()
+    func updateMentoring(mentoring: Mentoring, date: Date, roomId: String)
 }
+
 class MentoringPresenterDefault: MentoringPresenter {
-    weak var view: MentoringView?
+ weak var view: MentoringView?
     
     private let session: SessionManager
     private let networkRequest: BederrApiManager
@@ -61,4 +63,42 @@ class MentoringPresenterDefault: MentoringPresenter {
             }
     }
     
+    
+    func updateMentoring(mentoring: Mentoring, date: Date, roomId: String) {
+        guard let room = Int(roomId) else {
+           view?.showErrorMessage("Debes ingresar una aula válida")
+            return
+        }
+        
+        var dataDate = DateFormatter.sharedFormatter.stringFromDate(date, withFormat: kJSONDateFormatter)
+        
+        guard let userID = session.user?.id else {
+            return
+        }
+        let endpoint = EstechAppEndpoints.updateMentoring(id: mentoring.id, ["id": mentoring.id,
+                                                                             "date": dataDate,
+                                                                             "roomId": room,
+                                                                             "status": "APPROVED",
+                                                                             "teacherId": mentoring.teacherId,
+                                                                             "studentId": mentoring.studentId])
+        view?.showLoading(isActive: true)
+
+        networkRequest
+            .setEndpoint(endpoint.path, .v5)
+            .setHttpMethod(endpoint.method)
+            .setParameter(endpoint.parameters)
+            .subscribeAndReceivedData{ [weak self] (result) in
+                switch result {
+                case .success:
+                    self?.view?.updateMentoringSuccess(mentoring)
+                    self?.view?.showLoading(isActive: false)
+                case .failure(let error):
+                    self?.view?.showErrorMessage(error.localizedDescription)
+                    self?.view?.showLoading(isActive: false)
+                }
+            }
+        
+    }
+    
+   
 }

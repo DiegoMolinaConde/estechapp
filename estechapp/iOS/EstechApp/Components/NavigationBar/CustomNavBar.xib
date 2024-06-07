@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomNavBar" customModule="EstechApp" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="M6D-MW-K97" id="qHw-xy-Xn0"/>
+                <outlet property="title" destination="859-tn-F2F" id="Phh-nd-nAm"/>
                 <outlet property="view" destination="iN0-l3-epB" id="EnQ-gJ-0Kq"/>
             </connections>
         </placeholder>

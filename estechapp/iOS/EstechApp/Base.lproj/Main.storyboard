@@ -188,12 +188,28 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="EZq-ie-Upj" kind="relationship" relationship="rootViewController" id="nbI-wA-baZ"/>
+                        <segue destination="7Ja-k2-g9M" kind="relationship" relationship="rootViewController" id="HtY-qt-cHK"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8WY-ti-JcL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="218" y="-1152"/>
+        </scene>
+        <!--Inicio-->
+        <scene sceneID="JOR-lO-wvw">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="jno-lG-43g" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Inicio" image="homekit" catalog="system" id="jee-RN-Cvm"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cMR-3L-qav">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="EZq-ie-Upj" kind="relationship" relationship="rootViewController" id="ocm-k6-Zrt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tGZ-eX-8aP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="241" y="-1826"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="DW2-SJ-RtS">
@@ -382,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="InP-fX-wUF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="968.79999999999995" y="-434.48275862068965"/>
+            <point key="canvasLocation" x="1014" y="-1174"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="4OP-Tu-o4y">
@@ -679,7 +695,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8E-mV-Z1f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="969" y="-1153"/>
+            <point key="canvasLocation" x="970" y="-1846"/>
         </scene>
         <!--DAM 1º-->
         <scene sceneID="6aI-un-Grc">
@@ -690,12 +706,98 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="nIc-t2-fKG" kind="relationship" relationship="rootViewController" id="SyH-Wc-VI4"/>
+                        <segue destination="oBg-XR-2z5" kind="relationship" relationship="rootViewController" id="l0T-1c-VaN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9a7-WJ-PKh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="218" y="340"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="2Ri-u1-zZn">
+            <objects>
+                <viewController id="oBg-XR-2z5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KCj-cA-wei">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfp-d8-qLe" customClass="CustomNavBar" customModule="EstechApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="C7k-mY-DxZ"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VuQ-Pp-4Sv">
+                                <rect key="frame" x="12" y="124.00000000000001" width="351" height="215.33333333333337"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alumnos      " textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktn-uK-mro">
+                                        <rect key="frame" x="0.0" y="0.0" width="351" height="19.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ftk-uA-u35">
+                                        <rect key="frame" x="0.0" y="19" width="351" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="oBg-XR-2z5" id="m2Z-Pd-aPt"/>
+                                        </connections>
+                                    </searchBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rPs-PG-wmG">
+                                        <rect key="frame" x="0.0" y="75.333333333333343" width="351" height="140"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="140" id="8WB-q1-zVX"/>
+                                        </constraints>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="t2o-Na-Rvb">
+                                <rect key="frame" x="12" y="363.33333333333331" width="351" height="215.33333333333331"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profesores" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmM-ba-7UM">
+                                        <rect key="frame" x="0.0" y="0.0" width="351" height="19.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="0am-xC-QE5">
+                                        <rect key="frame" x="0.0" y="19.333333333333371" width="351" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="oBg-XR-2z5" id="Qtl-n2-csA"/>
+                                        </connections>
+                                    </searchBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xuI-rX-97h">
+                                        <rect key="frame" x="0.0" y="75.333333333333371" width="351" height="140"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="140" id="XxG-vp-BIY"/>
+                                        </constraints>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RbG-j5-e9O"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VuQ-Pp-4Sv" firstAttribute="leading" secondItem="KCj-cA-wei" secondAttribute="leading" constant="12" id="16f-Gw-VVo"/>
+                            <constraint firstItem="hfp-d8-qLe" firstAttribute="top" secondItem="RbG-j5-e9O" secondAttribute="top" id="3XD-ZK-rs8"/>
+                            <constraint firstItem="t2o-Na-Rvb" firstAttribute="top" secondItem="VuQ-Pp-4Sv" secondAttribute="bottom" constant="24" id="9dX-E7-waS"/>
+                            <constraint firstAttribute="trailing" secondItem="t2o-Na-Rvb" secondAttribute="trailing" constant="12" id="LO6-MW-2z2"/>
+                            <constraint firstItem="hfp-d8-qLe" firstAttribute="leading" secondItem="KCj-cA-wei" secondAttribute="leading" id="N9v-Yl-AMJ"/>
+                            <constraint firstItem="RbG-j5-e9O" firstAttribute="trailing" secondItem="VuQ-Pp-4Sv" secondAttribute="trailing" constant="12" id="QgZ-BE-uIv"/>
+                            <constraint firstItem="t2o-Na-Rvb" firstAttribute="leading" secondItem="RbG-j5-e9O" secondAttribute="leading" constant="12" id="hJZ-TH-w2q"/>
+                            <constraint firstItem="VuQ-Pp-4Sv" firstAttribute="top" secondItem="hfp-d8-qLe" secondAttribute="bottom" constant="24" id="mmu-Kb-b7P"/>
+                            <constraint firstItem="RbG-j5-e9O" firstAttribute="trailing" secondItem="hfp-d8-qLe" secondAttribute="trailing" id="ysf-5p-Y2J"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="quz-9f-4u6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sDX-dx-SgE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053" y="338"/>
         </scene>
         <!--Tab Barprofesor Controller View Controller-->
         <scene sceneID="FZX-BZ-fb2">
@@ -711,6 +813,7 @@
                         <segue destination="jmu-0u-SjF" kind="relationship" relationship="viewControllers" id="LKB-xc-Kpl"/>
                         <segue destination="twB-Op-dwD" kind="relationship" relationship="viewControllers" id="sSB-Cx-HxK"/>
                         <segue destination="H6h-vQ-iHK" kind="relationship" relationship="viewControllers" id="NRA-1o-CqL"/>
+                        <segue destination="jno-lG-43g" kind="relationship" relationship="viewControllers" id="Zcs-a9-Ogy"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LhF-fM-5a9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1644,7 +1747,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="7Ja-k2-g9M" kind="relationship" relationship="rootViewController" id="e4q-zz-s63"/>
+                        <segue destination="nIc-t2-fKG" kind="relationship" relationship="rootViewController" id="N7R-Yv-Gw6"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IJw-9w-cCq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1838,7 +1941,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8bz-DR-bwn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1013.6" y="338.42364532019707"/>
+            <point key="canvasLocation" x="1014" y="-434"/>
         </scene>
         <!--Fichaje View Controller-->
         <scene sceneID="1Ay-fD-gBA">
@@ -2322,10 +2425,11 @@
         <image name="Teacher" width="25.333333969116211" height="25.333333969116211"/>
         <image name="User" width="15" height="15"/>
         <image name="agreement" width="25.333333969116211" height="25.333333969116211"/>
-        <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="calendar" width="25.333333969116211" height="25"/>
+        <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="entrada" width="500" height="500"/>
         <image name="group" width="25.333333969116211" height="25.333333969116211"/>
+        <image name="homekit" catalog="system" width="128" height="104"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

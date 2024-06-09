@@ -19,6 +19,18 @@ struct Mentoring {
     let roomId: Int
     let date: Date
     let status: MentoringStatus
-    let teacherId: Int
-    let studentId: Int
+    let student: Person
+    let teacher: Person
+}
+
+
+struct Person {
+    let id: Int
+    let email: String
+    let firstName: String
+    let lastName: String
+    
+    var fullName: String {
+        firstName + " " + lastName
+    }
 }

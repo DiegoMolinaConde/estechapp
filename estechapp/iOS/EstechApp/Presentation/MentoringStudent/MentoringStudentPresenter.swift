@@ -1,22 +1,23 @@
 //
-//  MentoringPresenter.swift
+//  MentoringStudentPresenter.swift
 //  EstechApp
 //
-//  Created by Junior Quevedo Gutiérrez  on 4/06/24.
+//  Created by Junior Quevedo Gutiérrez  on 8/06/24.
 //
 
+import Foundation
 import Foundation
 import BDRCoreNetwork
 import BDRModel
 
-protocol MentoringPresenter: AnyObject {
-    var view: MentoringView? { get set }
+protocol MentoringStudentPresenter: AnyObject {
+    var view: MentoringStudentView? { get set }
     func fetchMentorings()
     func updateMentoring(mentoring: Mentoring, date: Date, roomId: String)
 }
 
-class MentoringPresenterDefault: MentoringPresenter {
- weak var view: MentoringView?
+class MentoringStudentPresenterDefault: MentoringStudentPresenter {    
+ weak var view: MentoringStudentView?
     
     private let session: SessionManager
     private let networkRequest: BederrApiManager
@@ -32,7 +33,7 @@ class MentoringPresenterDefault: MentoringPresenter {
         guard let userID = session.user?.id else {
             return
         }
-        let endpoint = EstechAppEndpoints.listMentoringsByTeacher(id: userID)
+        let endpoint = EstechAppEndpoints.listMentoringsByStudent(id: userID)
         networkRequest
             .setEndpoint(endpoint.path, .v5)
             .setHttpMethod(endpoint.method)

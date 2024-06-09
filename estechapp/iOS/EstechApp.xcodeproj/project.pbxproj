@@ -40,6 +40,8 @@
 		AD0BD0112C0F7C12003BFA09 /* MentoringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0BD0102C0F7C12003BFA09 /* MentoringViewController.swift */; };
 		AD0BD0132C0F7E10003BFA09 /* MentoringPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0BD0122C0F7E10003BFA09 /* MentoringPresenter.swift */; };
 		AD0BD0152C0F7F4E003BFA09 /* MentoringBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0BD0142C0F7F4E003BFA09 /* MentoringBuilder.swift */; };
+		AD0BD0502C154A9E003BFA09 /* MentoringStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0BD04F2C154A9E003BFA09 /* MentoringStudentViewController.swift */; };
+		AD0BD0522C154B36003BFA09 /* MentoringStudentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0BD0512C154B36003BFA09 /* MentoringStudentPresenter.swift */; };
 		AD96B5712BF7BA9400378E6B /* Mentoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD96B5702BF7BA9400378E6B /* Mentoring.swift */; };
 		AD96B5732BF7BB3600378E6B /* MentoringTeacherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD96B5722BF7BB3600378E6B /* MentoringTeacherResponse.swift */; };
 		AD96B5762BF7BD4000378E6B /* MentoringTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD96B5752BF7BD4000378E6B /* MentoringTableViewCell.swift */; };
@@ -79,6 +81,8 @@
 		AD0BD0102C0F7C12003BFA09 /* MentoringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentoringViewController.swift; sourceTree = "<group>"; };
 		AD0BD0122C0F7E10003BFA09 /* MentoringPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentoringPresenter.swift; sourceTree = "<group>"; };
 		AD0BD0142C0F7F4E003BFA09 /* MentoringBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentoringBuilder.swift; sourceTree = "<group>"; };
+		AD0BD04F2C154A9E003BFA09 /* MentoringStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentoringStudentViewController.swift; sourceTree = "<group>"; };
+		AD0BD0512C154B36003BFA09 /* MentoringStudentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentoringStudentPresenter.swift; sourceTree = "<group>"; };
 		AD96B5702BF7BA9400378E6B /* Mentoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mentoring.swift; sourceTree = "<group>"; };
 		AD96B5722BF7BB3600378E6B /* MentoringTeacherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentoringTeacherResponse.swift; sourceTree = "<group>"; };
 		AD96B5752BF7BD4000378E6B /* MentoringTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentoringTableViewCell.swift; sourceTree = "<group>"; };
@@ -238,6 +242,15 @@
 			path = Mentorings;
 			sourceTree = "<group>";
 		};
+		AD0BD04E2C154A78003BFA09 /* MentoringStudent */ = {
+			isa = PBXGroup;
+			children = (
+				AD0BD04F2C154A9E003BFA09 /* MentoringStudentViewController.swift */,
+				AD0BD0512C154B36003BFA09 /* MentoringStudentPresenter.swift */,
+			);
+			path = MentoringStudent;
+			sourceTree = "<group>";
+		};
 		AD96B5742BF7BD1900378E6B /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +278,7 @@
 		AD9B443B2BEDCF7000312BD6 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				AD0BD04E2C154A78003BFA09 /* MentoringStudent */,
 				AD0BD00F2C0F7BEC003BFA09 /* Mentorings */,
 				AD0BCFF92C079350003BFA09 /* Groups */,
 				AD086EEC2BF1D1F400BEC852 /* HistorialCheckIns */,
@@ -391,6 +405,7 @@
 				AD086ED42BF1B5D100BEC852 /* LoginPresenter.swift in Sources */,
 				AD0BCFFD2C0794C8003BFA09 /* Group.swift in Sources */,
 				AD0BD0152C0F7F4E003BFA09 /* MentoringBuilder.swift in Sources */,
+				AD0BD0522C154B36003BFA09 /* MentoringStudentPresenter.swift in Sources */,
 				80DA0F902BD6C24F004EBED3 /* TabBarprofesorControllerViewController.swift in Sources */,
 				AD086EF12BF1D33B00BEC852 /* CheckInTableViewCell.swift in Sources */,
 				AD086EE72BF1C5B000BEC852 /* FichajePresenter.swift in Sources */,
@@ -399,6 +414,7 @@
 				3D8455762B9F7EF000712BBF /* AppDelegate.swift in Sources */,
 				3D8455782B9F7EF000712BBF /* SceneDelegate.swift in Sources */,
 				AD086EEE2BF1D20D00BEC852 /* HistoryCheckInViewController.swift in Sources */,
+				AD0BD0502C154A9E003BFA09 /* MentoringStudentViewController.swift in Sources */,
 				AD086EE32BF1C2ED00BEC852 /* UserInfoResponse.swift in Sources */,
 				AD0BD0132C0F7E10003BFA09 /* MentoringPresenter.swift in Sources */,
 				AD0BCFFB2C07935F003BFA09 /* GroupsViewController.swift in Sources */,

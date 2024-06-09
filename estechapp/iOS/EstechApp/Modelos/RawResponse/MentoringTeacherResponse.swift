@@ -12,6 +12,22 @@ struct MentoringTeacherResponse: Codable {
     let roomId: Int?
     let date: String?
     let status: String?
-    let teacherId: Int
-    let studentId: Int
+    let student: StudentResponse?
+    let teacher: TeacherResponse?
+}
+
+
+struct StudentResponse: Codable {
+    let email: String
+    let id: Int
+    let lastName: String?
+    let name: String?
+}
+
+
+struct TeacherResponse: Codable {
+    let email: String
+    let id: Int
+    let lastName: String?
+    let name: String?
 }

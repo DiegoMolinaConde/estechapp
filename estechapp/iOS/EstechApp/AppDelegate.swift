@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         var urlBase: String {
-            "http://0.0.0.0:3000/"
+            "https://389e-87-218-62-225.ngrok-free.app/"
         }
     }
 

@@ -34,7 +34,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="a" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PIk-P2-EAg">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="alumno@escuelaestech.es" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PIk-P2-EAg">
                                         <rect key="frame" x="0.0" y="22" width="297" height="18.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -57,7 +57,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="a" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kcc-po-8xw">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kcc-po-8xw">
                                         <rect key="frame" x="0.0" y="26" width="297" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
@@ -400,10 +400,10 @@
             </objects>
             <point key="canvasLocation" x="1014" y="-1174"/>
         </scene>
-        <!--View Controller-->
+        <!--Mentoring Student View Controller-->
         <scene sceneID="4OP-Tu-o4y">
             <objects>
-                <viewController id="EZq-ie-Upj" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MentoringStudentViewController" id="EZq-ie-Upj" customClass="MentoringStudentViewController" customModule="EstechApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fp5-Hl-mMj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -453,7 +453,7 @@
                                         <rect key="frame" x="8" y="40.33333333333335" width="335" height="127.66666666666669"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MentoringTableViewCell" rowHeight="44" id="Ak6-6y-KTN" customClass="MentoringTableViewCell" customModule="EstechApp" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MentoringStudentTableViewCell" rowHeight="44" id="Ak6-6y-KTN" customClass="MentoringStudentTableViewCell" customModule="EstechApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="335" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ak6-6y-KTN" id="yIG-kP-Hch">
@@ -499,8 +499,8 @@
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
-                                            <outlet property="dataSource" destination="gCx-R7-jkZ" id="eyM-Js-95L"/>
-                                            <outlet property="delegate" destination="gCx-R7-jkZ" id="4NH-GV-1KJ"/>
+                                            <outlet property="dataSource" destination="EZq-ie-Upj" id="qtm-Ow-cDI"/>
+                                            <outlet property="delegate" destination="EZq-ie-Upj" id="5Pk-60-AV6"/>
                                         </connections>
                                     </tableView>
                                 </subviews>
@@ -692,10 +692,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ODf-Mz-tz2"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="IEt-3J-UUn" id="Iwa-kK-SbS"/>
+                        <outlet property="tableView" destination="g2R-Qf-Kkv" id="2Nb-sM-ZqX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J8E-mV-Z1f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="970" y="-1846"/>
+            <point key="canvasLocation" x="968.79999999999995" y="-1846.5517241379312"/>
         </scene>
         <!--DAM 1º-->
         <scene sceneID="6aI-un-Grc">

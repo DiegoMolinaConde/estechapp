@@ -37,7 +37,7 @@ class AsignedMentoringTableViewCell: UITableViewCell {
     
     func setupData(_ mentoring: Mentoring) {
         self.mentoring = mentoring
-        nameStudent.text = "Alumno \(mentoring.studentId)"
+        nameStudent.text = "Alumno \(mentoring.student.fullName)"
         dateMentoring.text = DateFormatter.sharedFormatter.stringFromDate(mentoring.date, withFormat: kFormatLocal)
     }
 }
@@ -62,7 +62,7 @@ class PendingAcceptMentoringTableViewCell: UITableViewCell {
 
     func setupData(_ mentoring: Mentoring) {
         self.mentoring = mentoring
-        nameStudent.text = "Alumno \(mentoring.studentId)"
+        nameStudent.text = "Alumno \(mentoring.student.fullName)"
         dateMentoring.text = DateFormatter.sharedFormatter.stringFromDate(mentoring.date, withFormat: kFormatLocal)
     }
 }

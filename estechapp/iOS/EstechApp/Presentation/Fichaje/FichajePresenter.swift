@@ -53,8 +53,17 @@ class FichajePresenterDefault: FichajePresenter {
                             roomId: rawData.roomId ?? 0,
                             date: DateFormatter.sharedFormatter.dateFromString(rawData.date ?? "", withFormat: kServerDateFormatter) ?? Date(),
                             status: MentoringStatus(rawValue: rawData.status ?? "") ?? .pending,
-                            teacherId: rawData.teacherId,
-                            studentId: rawData.studentId
+                            student: .init(
+                                id: rawData.student?.id ?? 0,
+                                email: rawData.student?.email ?? "",
+                                firstName: rawData.student?.name ?? "",
+                                lastName: rawData.student?.lastName ?? ""
+                            ), teacher: .init(
+                                id: rawData.teacher?.id ?? 0,
+                                email: rawData.teacher?.email ?? "",
+                                firstName: rawData.teacher?.name ?? "",
+                                lastName: rawData.teacher?.lastName ?? ""
+                            )
                         )
                     }
                     self?.view?.showMentoringByTeacher(mappedMentorings)
@@ -79,7 +88,7 @@ class FichajePresenterDefault: FichajePresenter {
         let lastState = UserDefaults.standard.bool(forKey: kCheckInLasState)
         let endpoint = EstechAppEndpoints.addChekIn(
             [
-                "checkIn": lastState,
+                "checkIn": !lastState,
                 "date": DateFormatter.sharedFormatter.stringFromDate(Date(), withFormat: kJSONDateFormatter),
                 "user": ["id": session.user?.id ?? 0]
             ]

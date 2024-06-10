@@ -47,6 +47,9 @@
 		AD96B5762BF7BD4000378E6B /* MentoringTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD96B5752BF7BD4000378E6B /* MentoringTableViewCell.swift */; };
 		AD9B443A2BEDC45900312BD6 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B44392BEDC45900312BD6 /* UIView+Extensions.swift */; };
 		AD9B443F2BEDCFAD00312BD6 /* FichajeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9B443E2BEDCFAD00312BD6 /* FichajeViewController.swift */; };
+		ADD647242C16AA95003DA3E3 /* GroupsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD647232C16AA95003DA3E3 /* GroupsResponse.swift */; };
+		ADD647262C16AB5A003DA3E3 /* GroupsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD647252C16AB5A003DA3E3 /* GroupsPresenter.swift */; };
+		ADD647292C16B456003DA3E3 /* GroupsUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD647282C16B456003DA3E3 /* GroupsUserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +91,9 @@
 		AD96B5752BF7BD4000378E6B /* MentoringTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentoringTableViewCell.swift; sourceTree = "<group>"; };
 		AD9B44392BEDC45900312BD6 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		AD9B443E2BEDCFAD00312BD6 /* FichajeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichajeViewController.swift; sourceTree = "<group>"; };
+		ADD647232C16AA95003DA3E3 /* GroupsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsResponse.swift; sourceTree = "<group>"; };
+		ADD647252C16AB5A003DA3E3 /* GroupsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsPresenter.swift; sourceTree = "<group>"; };
+		ADD647282C16B456003DA3E3 /* GroupsUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsUserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +197,7 @@
 				AD086EE22BF1C2ED00BEC852 /* UserInfoResponse.swift */,
 				AD086EEA2BF1CC8800BEC852 /* CheckInResponse.swift */,
 				AD96B5722BF7BB3600378E6B /* MentoringTeacherResponse.swift */,
+				ADD647232C16AA95003DA3E3 /* GroupsResponse.swift */,
 			);
 			path = RawResponse;
 			sourceTree = "<group>";
@@ -228,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				AD0BCFFA2C07935F003BFA09 /* GroupsViewController.swift */,
+				ADD647252C16AB5A003DA3E3 /* GroupsPresenter.swift */,
 			);
 			path = Groups;
 			sourceTree = "<group>";
@@ -278,6 +286,7 @@
 		AD9B443B2BEDCF7000312BD6 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				ADD647272C16B429003DA3E3 /* GroupsUsers */,
 				AD0BD04E2C154A78003BFA09 /* MentoringStudent */,
 				AD0BD00F2C0F7BEC003BFA09 /* Mentorings */,
 				AD0BCFF92C079350003BFA09 /* Groups */,
@@ -307,6 +316,14 @@
 				AD086EE62BF1C5B000BEC852 /* FichajePresenter.swift */,
 			);
 			path = Fichaje;
+			sourceTree = "<group>";
+		};
+		ADD647272C16B429003DA3E3 /* GroupsUsers */ = {
+			isa = PBXGroup;
+			children = (
+				ADD647282C16B456003DA3E3 /* GroupsUserViewController.swift */,
+			);
+			path = GroupsUsers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,7 +414,9 @@
 				AD9B443A2BEDC45900312BD6 /* UIView+Extensions.swift in Sources */,
 				AD0BD0112C0F7C12003BFA09 /* MentoringViewController.swift in Sources */,
 				3D84557A2B9F7EF000712BBF /* ViewController.swift in Sources */,
+				ADD647242C16AA95003DA3E3 /* GroupsResponse.swift in Sources */,
 				AD086EDA2BF1B85300BEC852 /* SessionManager.swift in Sources */,
+				ADD647262C16AB5A003DA3E3 /* GroupsPresenter.swift in Sources */,
 				AD086EEB2BF1CC8800BEC852 /* CheckInResponse.swift in Sources */,
 				80DA0F882BD5594F004EBED3 /* ModeloLogin.swift in Sources */,
 				AD086EF52BF1D47500BEC852 /* Fichaje.swift in Sources */,
@@ -408,6 +427,7 @@
 				AD0BD0522C154B36003BFA09 /* MentoringStudentPresenter.swift in Sources */,
 				80DA0F902BD6C24F004EBED3 /* TabBarprofesorControllerViewController.swift in Sources */,
 				AD086EF12BF1D33B00BEC852 /* CheckInTableViewCell.swift in Sources */,
+				ADD647292C16B456003DA3E3 /* GroupsUserViewController.swift in Sources */,
 				AD086EE72BF1C5B000BEC852 /* FichajePresenter.swift in Sources */,
 				AD96B5712BF7BA9400378E6B /* Mentoring.swift in Sources */,
 				80DA0F922BD6C29B004EBED3 /* TabBarAlumnoController.swift in Sources */,

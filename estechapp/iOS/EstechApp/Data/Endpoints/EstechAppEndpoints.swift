@@ -13,9 +13,10 @@ enum EstechAppEndpoints  {
     case login(Parameters)
     case userInfo(Parameters)
     case addChekIn(Parameters)
-    case listCheckins
+    case listCheckins(id: Int)
     case listMentoringsByTeacher(id: Int)
     case listMentoringsByStudent(id: Int)
+    case listGrouos(id: Int)
     
     case updateMentoring(id: Int, Parameters)
     case createeMentoring(Parameters)
@@ -28,8 +29,8 @@ enum EstechAppEndpoints  {
             return "api/user/user-info"
         case .addChekIn:
             return "api/check-in/new"
-        case .listCheckins:
-            return "api/check-in"
+        case .listCheckins(let id):
+            return "api/check-in/by-user/\(id)"
         case .listMentoringsByTeacher(let id):
             return "api/mentoring/by-teacher/\(id)"
         case .listMentoringsByStudent(let id):
@@ -38,6 +39,8 @@ enum EstechAppEndpoints  {
             return "api/mentoring/\(id)"
         case .createeMentoring(_):
             return "api/mentoring/"
+        case .listGrouos(id: let id):
+            return "api/group/by-user/\(id)"
         }
     }
 
@@ -47,7 +50,7 @@ enum EstechAppEndpoints  {
             return .post
         case .updateMentoring:
             return .put
-        case .listCheckins, .listMentoringsByTeacher:
+        case .listCheckins, .listMentoringsByTeacher, .listGrouos:
             return .get
         case .listMentoringsByStudent:
             return .get
@@ -66,7 +69,7 @@ enum EstechAppEndpoints  {
             return parameters
         case .updateMentoring(_, let parameters):
             return parameters
-        case .listCheckins, .listMentoringsByTeacher, .listMentoringsByStudent:
+        case .listCheckins, .listMentoringsByTeacher, .listMentoringsByStudent, .listGrouos:
             return nil
         }
     }

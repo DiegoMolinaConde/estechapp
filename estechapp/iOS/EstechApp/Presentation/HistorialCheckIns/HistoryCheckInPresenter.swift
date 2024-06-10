@@ -25,7 +25,7 @@ class HistoryCheckInPresenterDefault: HistoryCheckInPresenter {
     }
     
     func fetchHistory() {
-        let endpoint = EstechAppEndpoints.listCheckins
+        let endpoint = EstechAppEndpoints.listCheckins(id: session.user?.id ?? 0)
         
         networkRequest
             .setEndpoint(endpoint.path, .v5)

@@ -19,29 +19,36 @@ class GroupsCollectionViewCell: UICollectionViewCell {
         imageGroups.image = data.image
     }
 }
+
+protocol GroupsView: AnyObject {
+    func showGroups(grouos: [Group])
+    func showLoading(isActive: Bool)
+    func showErrorMessage(_ msg: String)
+}
 class GroupsViewController: UIViewController {
     
     @IBOutlet weak var navBar: CustomNavBar!
     @IBOutlet weak var todayLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var groups: [Group] = [
-        .init(type: "Animaciones", numberGroup: 1, numberStudents: 14),
-        .init(type: "Animaciones", numberGroup: 2, numberStudents: 23),
-        .init(type: "DAM", numberGroup: 1, numberStudents: 45),
-        .init(type: "DAM", numberGroup: 2, numberStudents: 75),
-        .init(type: "ASIR", numberGroup: 1, numberStudents: 666),
-        .init(type: "ASIR", numberGroup: 2, numberStudents: 777)]
+    let presenter = GroupsPresenterDefault()
+    var groups: [Group] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.hideBackButton()
         navBar.setTitle("Grupos")
         todayLabel.text = DateFormatter.sharedFormatter.stringFromDate(Date(), withFormat: prettyFormat)
+        presenter.view = self
+        presenter.fetchGroups()
     }
 }
 
-extension GroupsViewController : UICollectionViewDataSource {
+extension GroupsViewController : UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return groups.count
     }
@@ -54,5 +61,29 @@ extension GroupsViewController : UICollectionViewDataSource {
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = groups[indexPath.row]
+        guard let vc =  UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "GroupsUserViewController") as? GroupsUserViewController else {
+            return
+        }
+        vc.user = item
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+}
+
+extension GroupsViewController: GroupsView {
+    func showGroups(grouos: [Group]) {
+        self.groups = grouos
+    }
+    
+    func showLoading(isActive: Bool) {
+        isActive ? displayAnimatedActivityIndicatorView() :  hideAnimatedActivityIndicatorView()
+    }
+    
+    func showErrorMessage(_ msg: String) {
+        self.showErrorMessage(message: msg)
+    }
     
 }

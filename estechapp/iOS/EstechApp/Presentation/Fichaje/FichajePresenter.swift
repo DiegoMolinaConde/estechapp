@@ -51,7 +51,7 @@ class FichajePresenterDefault: FichajePresenter {
                         Mentoring(
                             id: rawData.id,
                             roomId: rawData.roomId ?? 0,
-                            date: DateFormatter.sharedFormatter.dateFromString(rawData.date ?? "", withFormat: kServerDateFormatter) ?? Date(),
+                            date: DateFormatter.sharedFormatter.dateFromString(rawData.start ?? "", withFormat: kServerDateFormatter) ?? Date(),
                             status: MentoringStatus(rawValue: rawData.status ?? "") ?? .pending,
                             student: .init(
                                 id: rawData.student?.id ?? 0,

@@ -34,7 +34,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="profesor@escuelaestech.es" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PIk-P2-EAg">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="alumno@escuelaestech.es" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PIk-P2-EAg">
                                         <rect key="frame" x="0.0" y="22" width="297" height="18.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -402,6 +402,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="4NQ-Ui-nwf"/>
                     <connections>
+                        <outlet property="navBar" destination="CcA-AW-Cap" id="Sec-dl-Oux"/>
                         <outlet property="tableView" destination="lpB-W5-71h" id="iDi-UB-IdQ"/>
                     </connections>
                 </viewController>
@@ -1862,10 +1863,10 @@
             </objects>
             <point key="canvasLocation" x="218" y="-434"/>
         </scene>
-        <!--View Controller-->
+        <!--Free Usages By Student View Controller-->
         <scene sceneID="RuQ-gm-LBT">
             <objects>
-                <viewController id="nIc-t2-fKG" sceneMemberID="viewController">
+                <viewController id="nIc-t2-fKG" customClass="FreeUsagesByStudentViewController" customModule="EstechApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fYz-eX-XHP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1881,7 +1882,7 @@
                                 <rect key="frame" x="12" y="160" width="351" height="557"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AsignedMentoringTableViewCell" rowHeight="75" id="lkX-oy-xyz" customClass="AsignedMentoringTableViewCell" customModule="EstechApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FreeUsagesByStudentTableViewCell" rowHeight="75" id="lkX-oy-xyz" customClass="FreeUsagesByStudentTableViewCell" customModule="EstechApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="351" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lkX-oy-xyz" id="cnN-6T-zF7">
@@ -1915,7 +1916,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rzG-lt-NAl">
                                                                     <rect key="frame" x="0.0" y="25" width="100.33333333333333" height="13"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clock" translatesAutoresizingMaskIntoConstraints="NO" id="tgp-hi-5IY">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calendar" translatesAutoresizingMaskIntoConstraints="NO" id="tgp-hi-5IY">
                                                                             <rect key="frame" x="0.0" y="0.0" width="13" height="13"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="13" id="oaU-AN-pnL"/>
@@ -1958,7 +1959,7 @@
                                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                     <state key="normal" image="Multiply"/>
                                                                     <connections>
-                                                                        <action selector="cancelDidSelect:" destination="lkX-oy-xyz" eventType="touchUpInside" id="xvD-5A-Glp"/>
+                                                                        <action selector="cancelAction:" destination="lkX-oy-xyz" eventType="touchUpInside" id="Jn3-ZG-avJ"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -1981,14 +1982,15 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="dateMentoring" destination="mDK-UA-GqF" id="FiU-Ns-AsX"/>
-                                            <outlet property="nameStudent" destination="gNP-Q5-RM0" id="AcQ-Gg-DCN"/>
+                                            <outlet property="dateLabel" destination="mDK-UA-GqF" id="btd-XA-Hc7"/>
+                                            <outlet property="hourLabel" destination="KGU-Zh-y7F" id="BY3-A2-dwt"/>
+                                            <outlet property="nameLabel" destination="gNP-Q5-RM0" id="ncI-HB-8M9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="MNY-Dz-7hm" id="tec-6S-nv5"/>
-                                    <outlet property="delegate" destination="MNY-Dz-7hm" id="bcl-9d-gAA"/>
+                                    <outlet property="dataSource" destination="nIc-t2-fKG" id="uhn-3A-keW"/>
+                                    <outlet property="delegate" destination="nIc-t2-fKG" id="pil-La-JJm"/>
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4wf-GC-OVZ">
@@ -2046,10 +2048,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uvA-a0-z9N"/>
+                    <connections>
+                        <outlet property="navBar" destination="2xW-b5-Z2S" id="rEg-5o-avW"/>
+                        <outlet property="tableView" destination="WFd-6K-bsX" id="DT1-3F-WGt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8bz-DR-bwn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1014" y="-434"/>
+            <point key="canvasLocation" x="1013.6" y="-434.48275862068965"/>
         </scene>
         <!--Fichaje View Controller-->
         <scene sceneID="1Ay-fD-gBA">

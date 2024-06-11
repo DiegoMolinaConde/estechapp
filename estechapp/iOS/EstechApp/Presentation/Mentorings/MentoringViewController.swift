@@ -90,11 +90,14 @@ class MentoringViewController: UIViewController {
         navBar.hideBackButton()
         navBar.setTitle("Tutorías")
         presenter.view = self
-        presenter.fetchMentorings()
        
         // Do any additional setup after loading the view.
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presenter.fetchMentorings()
+    }
 }
 
 extension MentoringViewController: CellActionDelegate {

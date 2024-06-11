@@ -1,22 +1,26 @@
 //
-//  MentoringPresenter.swift
+//  RequestMentoringByStudentPresenter.swift
 //  EstechApp
 //
-//  Created by Junior Quevedo Gutiérrez  on 4/06/24.
+//  Created by Junior Quevedo Gutiérrez  on 11/06/24.
 //
 
+import Foundation
 import Foundation
 import BDRCoreNetwork
 import BDRModel
 
-protocol MentoringPresenter: AnyObject {
-    var view: MentoringView? { get set }
+protocol RequestMentoringByStudentPresenter: AnyObject {
+    var view: RequestMentoringByStudentView? { get set }
     func fetchMentorings()
-    func updateMentoring(mentoring: Mentoring, date: Date, roomId: String)
+    func createNewMentoring(date: Date, roomId: String, teacher: String)
+    func cancelMentoring(mentoring: Mentoring)
 }
 
-class MentoringPresenterDefault: MentoringPresenter {
- weak var view: MentoringView?
+class RequestMentoringByStudentPresenterDefault: RequestMentoringByStudentPresenter {
+
+    
+    weak var view: RequestMentoringByStudentView?
     
     private let session: SessionManager
     private let networkRequest: BederrApiManager
@@ -32,7 +36,7 @@ class MentoringPresenterDefault: MentoringPresenter {
         guard let userID = session.user?.id else {
             return
         }
-        let endpoint = EstechAppEndpoints.listMentoringsByTeacher(id: userID)
+        let endpoint = EstechAppEndpoints.listMentoringsByStudent(id: userID)
         networkRequest
             .setEndpoint(endpoint.path, .v5)
             .setHttpMethod(endpoint.method)
@@ -74,8 +78,8 @@ class MentoringPresenterDefault: MentoringPresenter {
     }
     
     
-    func updateMentoring(mentoring: Mentoring, date: Date, roomId: String) {
-        guard let room = Int(roomId) else {
+    func createNewMentoring(date: Date, roomId: String, teacher: String) {
+        guard let room = Int(roomId), let teacher = Int(teacher) else {
            view?.showErrorMessage("Debes ingresar una aula válida")
             return
         }
@@ -85,20 +89,19 @@ class MentoringPresenterDefault: MentoringPresenter {
         guard let userID = session.user?.id else {
             return
         }
-        let endpoint = EstechAppEndpoints.updateMentoring(
-            id: mentoring.id,
+        let endpoint = EstechAppEndpoints.createeMentoring(
             [
-                "id": mentoring.id,
                 "start": dataDate,
                 "end": dataDate,
                 "roomId": room,
-                "status": "APPROVED",
-                "teacher": 
-                    ["id" : mentoring.teacher.id],
+                "status": "PENDING",
+                "teacher":
+                    ["id" : teacher],
                 "student":
-                    [ "id": mentoring.student.id]
+                    [ "id": userID]
             ]
         )
+        
         view?.showLoading(isActive: true)
 
         networkRequest
@@ -108,15 +111,34 @@ class MentoringPresenterDefault: MentoringPresenter {
             .subscribeAndReceivedData{ [weak self] (result) in
                 switch result {
                 case .success:
-                    self?.view?.updateMentoringSuccess(mentoring)
+                    self?.view?.createMentoringSuccess()
                     self?.view?.showLoading(isActive: false)
                 case .failure(let error):
                     self?.view?.showErrorMessage(error.localizedDescription)
                     self?.view?.showLoading(isActive: false)
                 }
             }
-        
     }
     
+    func cancelMentoring(mentoring: Mentoring) {
+        let endpoint = EstechAppEndpoints.updateMentoring(id: mentoring.id, ["id": mentoring.id,
+                                                                             "status": "DENIED"])
+        view?.showLoading(isActive: true)
+
+        networkRequest
+            .setEndpoint(endpoint.path, .v5)
+            .setHttpMethod(endpoint.method)
+            .setParameter(endpoint.parameters)
+            .subscribeAndReceivedData{ [weak self] (result) in
+                switch result {
+                case .success:
+                    self?.view?.cancelMentoringSuccess()
+                    self?.view?.showLoading(isActive: false)
+                case .failure(let error):
+                    self?.view?.showErrorMessage(error.localizedDescription)
+                    self?.view?.showLoading(isActive: false)
+                }
+            }
+    }
    
 }

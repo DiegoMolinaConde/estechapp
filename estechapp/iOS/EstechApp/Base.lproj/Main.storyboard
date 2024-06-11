@@ -211,10 +211,10 @@
             </objects>
             <point key="canvasLocation" x="241" y="-1826"/>
         </scene>
-        <!--View Controller-->
+        <!--Request Mentoring By Student View Controller-->
         <scene sceneID="DW2-SJ-RtS">
             <objects>
-                <viewController id="7Ja-k2-g9M" sceneMemberID="viewController">
+                <viewController id="7Ja-k2-g9M" customClass="RequestMentoringByStudentViewController" customModule="EstechApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gJO-c8-R7V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -230,7 +230,7 @@
                                 <rect key="frame" x="12" y="160" width="351" height="640"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AsignedMentoringTableViewCell" rowHeight="75" id="T6f-Iz-4GY" customClass="AsignedMentoringTableViewCell" customModule="EstechApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RequestMentoringTableViewCell" rowHeight="75" id="T6f-Iz-4GY" customClass="RequestMentoringTableViewCell" customModule="EstechApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="351" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T6f-Iz-4GY" id="Fga-NK-eb3">
@@ -261,26 +261,8 @@
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4oe-ge-M8l">
-                                                                    <rect key="frame" x="0.0" y="25" width="104.33333333333333" height="13"/>
-                                                                    <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clock" translatesAutoresizingMaskIntoConstraints="NO" id="GC2-Uy-QGB">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="13" height="13"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" constant="13" id="29C-Wu-WoF"/>
-                                                                                <constraint firstAttribute="height" constant="13" id="Axp-qj-ngb"/>
-                                                                            </constraints>
-                                                                        </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iñogo Acosta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8M2-hg-fq7">
-                                                                            <rect key="frame" x="21" y="0.0" width="83.333333333333329" height="13"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qgc-my-UUl">
-                                                                    <rect key="frame" x="0.0" y="50" width="104.33333333333333" height="13"/>
+                                                                    <rect key="frame" x="0.0" y="25" width="104.33333333333333" height="13"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clock" translatesAutoresizingMaskIntoConstraints="NO" id="b2M-UF-Lv1">
                                                                             <rect key="frame" x="0.0" y="0.0" width="13" height="13"/>
@@ -290,6 +272,25 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iñogo Acosta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDE-1q-IWN">
+                                                                            <rect key="frame" x="21" y="0.0" width="83.333333333333329" height="13"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4oe-ge-M8l">
+                                                                    <rect key="frame" x="0.0" y="50" width="104.33333333333333" height="13"/>
+                                                                    <subviews>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calendar" translatesAutoresizingMaskIntoConstraints="NO" id="GC2-Uy-QGB">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="13" height="13"/>
+                                                                            <color key="tintColor" red="0.2235293984" green="0.48235297199999999" blue="0.56078433989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="13" id="29C-Wu-WoF"/>
+                                                                                <constraint firstAttribute="height" constant="13" id="Axp-qj-ngb"/>
+                                                                            </constraints>
+                                                                        </imageView>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iñogo Acosta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8M2-hg-fq7">
                                                                             <rect key="frame" x="21" y="0.0" width="83.333333333333329" height="13"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                             <nil key="textColor"/>
@@ -307,7 +308,7 @@
                                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                     <state key="normal" image="Multiply"/>
                                                                     <connections>
-                                                                        <action selector="cancelDidSelect:" destination="T6f-Iz-4GY" eventType="touchUpInside" id="q2b-dY-c16"/>
+                                                                        <action selector="cancelAction:" destination="T6f-Iz-4GY" eventType="touchUpInside" id="LSu-aG-9jn"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -330,14 +331,16 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="dateMentoring" destination="8M2-hg-fq7" id="H6H-bT-8qz"/>
-                                            <outlet property="nameStudent" destination="Wv6-WB-6z6" id="qd5-Sp-etr"/>
+                                            <outlet property="cancelDidSelect" destination="HSV-5q-V1a" id="bRq-HZ-nzo"/>
+                                            <outlet property="dateLabel" destination="8M2-hg-fq7" id="Yxz-q4-fzR"/>
+                                            <outlet property="hourLabel" destination="qDE-1q-IWN" id="Jw4-pv-s0x"/>
+                                            <outlet property="nameLabel" destination="Wv6-WB-6z6" id="cn5-00-Tes"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="MNY-Dz-7hm" id="Q0d-Et-GSs"/>
-                                    <outlet property="delegate" destination="MNY-Dz-7hm" id="zeF-m0-R1z"/>
+                                    <outlet property="dataSource" destination="7Ja-k2-g9M" id="qoS-pf-phU"/>
+                                    <outlet property="delegate" destination="7Ja-k2-g9M" id="mBM-uH-FbG"/>
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cut-je-IgI">
@@ -365,6 +368,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="186" height="38"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="didRequestNew:" destination="7Ja-k2-g9M" eventType="touchUpInside" id="mhC-PI-cTJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -395,6 +401,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4NQ-Ui-nwf"/>
+                    <connections>
+                        <outlet property="tableView" destination="lpB-W5-71h" id="iDi-UB-IdQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="InP-fX-wUF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2512,6 +2521,7 @@
     <resources>
         <image name="AddNew" width="30" height="30"/>
         <image name="BusinessGroup" width="25.333333969116211" height="25.333333969116211"/>
+        <image name="Calendar" width="15" height="15"/>
         <image name="Chromebook" width="25.333333969116211" height="25.333333969116211"/>
         <image name="Clock" width="15" height="15"/>
         <image name="Done" width="36" height="36"/>
@@ -2545,10 +2555,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray3Color">
-            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemMintColor">
-            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

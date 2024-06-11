@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         var urlBase: String {
-            "https://d11f-87-218-62-225.ngrok-free.app/"
+            "https://2187-87-218-62-225.ngrok-free.app/"
         }
     }
 

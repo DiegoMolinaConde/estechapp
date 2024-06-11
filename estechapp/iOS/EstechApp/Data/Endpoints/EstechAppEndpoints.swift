@@ -36,9 +36,9 @@ enum EstechAppEndpoints  {
         case .listMentoringsByStudent(let id):
             return "api/mentoring/by-student/\(id)"
         case .updateMentoring(id: let id, _):
-            return "api/mentoring/\(id)"
+            return "api/mentoring"
         case .createeMentoring(_):
-            return "api/mentoring/"
+            return "api/mentoring"
         case .listGrouos(id: let id):
             return "api/group/by-user/\(id)"
         }

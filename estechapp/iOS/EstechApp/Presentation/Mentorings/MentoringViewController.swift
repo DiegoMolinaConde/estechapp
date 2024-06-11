@@ -298,6 +298,7 @@ extension MentoringViewController: UITableViewDataSource, UITableViewDelegate {
 extension MentoringViewController: MentoringView {
     func updateMentoringSuccess(_ mentoring: Mentoring) {
         showSuccessMessage(message: "Tutoría modificada con éxito!")
+        presenter.fetchMentorings()
     }
     
     func showMentorings(_ data: [Mentoring]) {

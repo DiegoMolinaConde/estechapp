@@ -10,7 +10,7 @@ import Foundation
 struct MentoringTeacherResponse: Codable {
     let id: Int
     let roomId: Int?
-    let date: String?
+    let start: String?
     let status: String?
     let student: StudentResponse?
     let teacher: TeacherResponse?

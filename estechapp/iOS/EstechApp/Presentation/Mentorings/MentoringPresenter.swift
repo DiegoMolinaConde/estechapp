@@ -50,13 +50,13 @@ class MentoringPresenterDefault: MentoringPresenter {
                         Mentoring(
                             id: rawData.id,
                             roomId: rawData.roomId ?? 0,
-                            date: DateFormatter.sharedFormatter.dateFromString(rawData.date ?? "", withFormat: kServerDateFormatter) ?? Date(),
+                            date: DateFormatter.sharedFormatter.dateFromString(rawData.start ?? "", withFormat: kServerDateFormatter) ?? Date(),
                             status: MentoringStatus(rawValue: rawData.status ?? "") ?? .pending,
                             student: .init(
-                                id: rawData.teacher?.id ?? 0,
-                                email: rawData.teacher?.email ?? "",
-                                firstName: rawData.teacher?.name ?? "",
-                                lastName: rawData.teacher?.lastName ?? ""
+                                id: rawData.student?.id ?? 0,
+                                email: rawData.student?.email ?? "",
+                                firstName: rawData.student?.name ?? "",
+                                lastName: rawData.student?.lastName ?? ""
                             ),
                             teacher: .init(
                                 id: rawData.teacher?.id ?? 0,

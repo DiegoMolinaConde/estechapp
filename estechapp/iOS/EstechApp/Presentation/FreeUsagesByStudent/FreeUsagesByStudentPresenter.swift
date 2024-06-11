@@ -1,27 +1,23 @@
 //
-//  RequestMentoringByStudentPresenter.swift
+//  FreeUsagesByStudentPresenter.swift
 //  EstechApp
 //
 //  Created by Junior Quevedo Gutiérrez  on 11/06/24.
 //
 
-import Foundation
-import Foundation
 import BDRCoreNetwork
 import BDRModel
+import Foundation
 
-protocol RequestMentoringByStudentPresenter: AnyObject {
-    var view: RequestMentoringByStudentView? { get set }
+protocol FreeUsagesByStudentPresenter: AnyObject {
+    var view: FreeUsagesByStudentView? { get set }
     func fetchMentorings()
     func createNewMentoring(date: Date, roomId: String, teacher: String)
-    func cancelMentoring(mentoring: Mentoring)
+    func cancelMentoring(mentoring: FreeUsages)
 }
 
-class RequestMentoringByStudentPresenterDefault: RequestMentoringByStudentPresenter {
-
-    
-    weak var view: RequestMentoringByStudentView?
-    
+class FreeUsagesByStudentPresenterDefault: FreeUsagesByStudentPresenter {
+    weak var view: FreeUsagesByStudentView?
     private let session: SessionManager
     private let networkRequest: BederrApiManager
 
@@ -36,7 +32,7 @@ class RequestMentoringByStudentPresenterDefault: RequestMentoringByStudentPresen
         guard let userID = session.user?.id else {
             return
         }
-        let endpoint = EstechAppEndpoints.listMentoringsByStudent(id: userID)
+        let endpoint = EstechAppEndpoints.freeUsagesByStudent(id: userID)
         networkRequest
             .setEndpoint(endpoint.path, .v5)
             .setHttpMethod(endpoint.method)
@@ -45,28 +41,28 @@ class RequestMentoringByStudentPresenterDefault: RequestMentoringByStudentPresen
                 switch result {
                 case .success(let dataRaw):
                     guard let raw = dataRaw as? Data,
-                          let response = [MentoringTeacherResponse].decodeJsonData(raw) else {
+                          let response = [FreeUsagesResponse].decodeJsonData(raw) else {
                         self?.view?.showLoading(isActive: false)
                         return
                     }
                     
                     let mappedMentorings = response.map { rawData in
-                        Mentoring(
+                        
+                        FreeUsages.init(
                             id: rawData.id,
-                            roomId: rawData.roomId ?? 0,
-                            date: DateFormatter.sharedFormatter.dateFromString(rawData.start ?? "", withFormat: kServerDateFormatter) ?? Date(),
+                            roomId: rawData.room?.id ?? 0,
+                            start: DateFormatter.sharedFormatter.dateFromString(rawData.start ?? "", withFormat: kServerDateFormatter) ?? Date(),
                             status: MentoringStatus(rawValue: rawData.status ?? "") ?? .pending,
-                            student: .init(
-                                id: rawData.teacher?.id ?? 0,
-                                email: rawData.teacher?.email ?? "",
-                                firstName: rawData.teacher?.name ?? "",
-                                lastName: rawData.teacher?.lastName ?? ""
-                            ),
-                            teacher: .init(
-                                id: rawData.teacher?.id ?? 0,
-                                email: rawData.teacher?.email ?? "",
-                                firstName: rawData.teacher?.name ?? "",
-                                lastName: rawData.teacher?.lastName ?? ""
+                            name: rawData.room?.name ?? "",
+                            description: rawData.room?.description ?? "",
+                            mentoringRoom: rawData.room?.mentoringRoom ?? false,
+                            studyRoom: rawData.room?.studyRoom ?? false,
+                            timeTables: [],
+                            user: .init(
+                                id: userID,
+                                email: self?.session.user?.email ?? "",
+                                firstName: self?.session.user?.firstName ?? "",
+                                lastName: self?.session.user?.lastName ?? ""
                             )
                         )
                     }
@@ -122,7 +118,7 @@ class RequestMentoringByStudentPresenterDefault: RequestMentoringByStudentPresen
             }
     }
     
-    func cancelMentoring(mentoring: Mentoring) {
+    func cancelMentoring(mentoring: FreeUsages) {
         let endpoint = EstechAppEndpoints.updatePartialMentoring(id: mentoring.id,[
                                                                              "status": "DENIED"])
         view?.showLoading(isActive: true)

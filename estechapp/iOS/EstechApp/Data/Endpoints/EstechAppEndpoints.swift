@@ -17,9 +17,12 @@ enum EstechAppEndpoints  {
     case listMentoringsByTeacher(id: Int)
     case listMentoringsByStudent(id: Int)
     case listGrouos(id: Int)
-    
+    case updatePartialMentoring(id: Int, Parameters)
     case updateMentoring(id: Int, Parameters)
     case createeMentoring(Parameters)
+    
+    case freeUsagesByStudent(id: Int)
+    case createFreeUsage(Parameters)
 
     var path: String {
         switch self {
@@ -37,10 +40,16 @@ enum EstechAppEndpoints  {
             return "api/mentoring/by-student/\(id)"
         case .updateMentoring(id: let id, _):
             return "api/mentoring"
+        case .updatePartialMentoring(id: let id, _):
+            return "api/mentoring/\(id)"
         case .createeMentoring(_):
             return "api/mentoring"
         case .listGrouos(id: let id):
             return "api/group/by-user/\(id)"
+        case .freeUsagesByStudent(id: let id):
+            return "api/free-usage/by-student/\(id)"
+        case .createFreeUsage(_):
+            return "api/free-usage"
         }
     }
 
@@ -54,6 +63,12 @@ enum EstechAppEndpoints  {
             return .get
         case .listMentoringsByStudent:
             return .get
+        case .updatePartialMentoring:
+            return .patch
+        case .freeUsagesByStudent(id: let id):
+            return .get
+        case .createFreeUsage(_):
+            return .post
         }
     }
     
@@ -69,8 +84,14 @@ enum EstechAppEndpoints  {
             return parameters
         case .updateMentoring(_, let parameters):
             return parameters
+        case .updatePartialMentoring(_, let parameters):
+            return parameters
         case .listCheckins, .listMentoringsByTeacher, .listMentoringsByStudent, .listGrouos:
             return nil
+        case .freeUsagesByStudent:
+            return nil
+        case .createFreeUsage(let parameters):
+            return parameters
         }
     }
 }

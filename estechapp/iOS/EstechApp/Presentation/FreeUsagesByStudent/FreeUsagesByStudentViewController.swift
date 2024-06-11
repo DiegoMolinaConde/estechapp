@@ -1,40 +1,41 @@
 //
-//  RequestMentoringByStudentViewController.swift
+//  FreeUsagesByStudentViewController.swift
 //  EstechApp
 //
 //  Created by Junior Quevedo Gutiérrez  on 11/06/24.
 //
 
+import Foundation
 import UIKit
 import BDRModel
-protocol RequestMentoringByStudentView: AnyObject {
-    func showMentorings(_ data: [Mentoring])
+protocol FreeUsagesByStudentView: AnyObject {
+    func showMentorings(_ data: [FreeUsages])
     func createMentoringSuccess()
     func cancelMentoringSuccess()
     func showLoading(isActive: Bool)
     func showErrorMessage(_ msg: String)
 }
 
-protocol RequestMentoringDelegate: AnyObject {
-    func didCancelMentoring(_ mentoring: Mentoring)
+protocol FreeUsagesByStudentDelegate: AnyObject {
+    func didCancelMentoring(_ mentoring: FreeUsages)
 }
-class RequestMentoringTableViewCell: UITableViewCell {
+class FreeUsagesByStudentTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var hourLabel: UILabel!
     @IBOutlet weak var cancelDidSelect: UIButton!
-    var delegate: RequestMentoringDelegate?
-    var mentoring: Mentoring?
+    var delegate: FreeUsagesByStudentDelegate?
+    var mentoring: FreeUsages?
     
-    func populate(_ data: Mentoring) {
+    func populate(_ data: FreeUsages) {
         mentoring = data
         hourLabel.text = DateFormatter.sharedFormatter.stringFromDate(
-            data.date,
+            data.start,
             withFormat: kHour24Formatter
         )
-        nameLabel.text = data.teacher.fullName
+        nameLabel.text = data.user.fullName
         dateLabel.text = DateFormatter.sharedFormatter.stringFromDate(
-            data.date,
+            data.start,
             withFormat: prettyFormat
         ) + "    Aula: \(data.roomId)"
     }
@@ -45,7 +46,7 @@ class RequestMentoringTableViewCell: UITableViewCell {
     }
 }
 
-class RequestMentoringByStudentViewController: UIViewController {
+class FreeUsagesByStudentViewController: UIViewController {
     
     @IBOutlet weak var navBar: CustomNavBar!
     @IBOutlet weak var tableView: UITableView!
@@ -53,8 +54,8 @@ class RequestMentoringByStudentViewController: UIViewController {
     var teacherId: String? = nil
     var dateSelect: Date? = nil
     var auxtextField: UITextField?
-    let presenter = RequestMentoringByStudentPresenterDefault()
-    var teacherMentoring: [Mentoring] = [] {
+    let presenter = FreeUsagesByStudentPresenterDefault()
+    var teacherMentoring: [FreeUsages] = [] {
         didSet {
             tableView.reloadData()
         }
@@ -63,7 +64,7 @@ class RequestMentoringByStudentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.view = self
-        navBar.setTitle("Tutorías")
+        navBar.setTitle("Práctica Libre")
         navBar.hideBackButton()
     }
     
@@ -134,13 +135,13 @@ class RequestMentoringByStudentViewController: UIViewController {
 }
 
 
-extension RequestMentoringByStudentViewController: UITableViewDelegate, UITableViewDataSource {
+extension FreeUsagesByStudentViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return teacherMentoring.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RequestMentoringTableViewCell", for: indexPath) as? RequestMentoringTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FreeUsagesByStudentTableViewCell", for: indexPath) as? FreeUsagesByStudentTableViewCell else {
             return UITableViewCell()
         }
         cell.selectionStyle = .none
@@ -154,8 +155,8 @@ extension RequestMentoringByStudentViewController: UITableViewDelegate, UITableV
     }
 }
 
-extension RequestMentoringByStudentViewController: RequestMentoringDelegate {
-    func didCancelMentoring(_ mentoring: Mentoring) {
+extension FreeUsagesByStudentViewController: FreeUsagesByStudentDelegate {
+    func didCancelMentoring(_ mentoring: FreeUsages) {
         let alert = UIAlertController(title: "Eliminar tutoría", message: "¿Seguro que desea eliminar esta tutoría?", preferredStyle: .alert)
         
         let alertActionOk = UIAlertAction(title: "Confirmar", style: .default) { action in
@@ -171,12 +172,12 @@ extension RequestMentoringByStudentViewController: RequestMentoringDelegate {
     }
 }
 
-extension RequestMentoringByStudentViewController: RequestMentoringByStudentView {
+extension FreeUsagesByStudentViewController: FreeUsagesByStudentView {
     func cancelMentoringSuccess() {
         presenter.fetchMentorings()
     }
     
-    func showMentorings(_ data: [Mentoring]) {
+    func showMentorings(_ data: [FreeUsages]) {
         self.teacherMentoring = data
     }
     

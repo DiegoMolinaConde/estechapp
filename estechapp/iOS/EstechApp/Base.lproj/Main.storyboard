@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JCs-6K-4jH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JCs-6K-4jH">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -34,7 +34,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="alumno@escuelaestech.es" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PIk-P2-EAg">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="diego@escuelaestech.es" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PIk-P2-EAg">
                                         <rect key="frame" x="0.0" y="22" width="297" height="18.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -727,10 +727,10 @@
             </objects>
             <point key="canvasLocation" x="218" y="340"/>
         </scene>
-        <!--View Controller-->
+        <!--Student Group View Controller-->
         <scene sceneID="2Ri-u1-zZn">
             <objects>
-                <viewController id="oBg-XR-2z5" sceneMemberID="viewController">
+                <viewController id="oBg-XR-2z5" customClass="StudentGroupViewController" customModule="EstechApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KCj-cA-wei">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -764,6 +764,37 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="140" id="8WB-q1-zVX"/>
                                         </constraints>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OneGroupCell" rowHeight="33" id="lah-dY-P5x" customClass="OneGroupCell" customModule="EstechApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="50" width="351" height="33"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lah-dY-P5x" id="6RO-bY-pHc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="351" height="33"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfp-XR-ARy">
+                                                            <rect key="frame" x="12" y="0.0" width="327" height="33"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="Cfp-XR-ARy" secondAttribute="trailing" constant="12" id="bhZ-Vq-Sun"/>
+                                                        <constraint firstItem="Cfp-XR-ARy" firstAttribute="top" secondItem="6RO-bY-pHc" secondAttribute="top" id="tPi-mf-6Iu"/>
+                                                        <constraint firstItem="Cfp-XR-ARy" firstAttribute="leading" secondItem="6RO-bY-pHc" secondAttribute="leading" constant="12" id="th2-qO-P3h"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Cfp-XR-ARy" secondAttribute="bottom" id="zZq-V2-lIy"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="nameLabel" destination="Cfp-XR-ARy" id="6LD-Zx-wb2"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="oBg-XR-2z5" id="f2t-L6-a3p"/>
+                                            <outlet property="delegate" destination="oBg-XR-2z5" id="mje-wd-cpG"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                             </stackView>
@@ -789,6 +820,37 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="140" id="XxG-vp-BIY"/>
                                         </constraints>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwoGroupCell" id="rSn-Tw-mp0" customClass="TwoGroupCell" customModule="EstechApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="50" width="351" height="20.666666030883789"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rSn-Tw-mp0" id="wEa-Um-QLH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="351" height="20.666666030883789"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAI-tn-HOA">
+                                                            <rect key="frame" x="12" y="0.0" width="327" height="20.666666666666668"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="rAI-tn-HOA" firstAttribute="top" secondItem="wEa-Um-QLH" secondAttribute="top" id="TDO-6F-lcu"/>
+                                                        <constraint firstAttribute="trailing" secondItem="rAI-tn-HOA" secondAttribute="trailing" constant="12" id="kOU-7F-BiH"/>
+                                                        <constraint firstItem="rAI-tn-HOA" firstAttribute="leading" secondItem="wEa-Um-QLH" secondAttribute="leading" constant="12" id="n0g-iS-Rrn"/>
+                                                        <constraint firstAttribute="bottom" secondItem="rAI-tn-HOA" secondAttribute="bottom" id="t0Y-NE-eQG"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="nameLabel" destination="rAI-tn-HOA" id="a5j-Bq-dif"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="oBg-XR-2z5" id="YEG-8b-kbw"/>
+                                            <outlet property="delegate" destination="oBg-XR-2z5" id="UFg-Jx-uPG"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                             </stackView>
@@ -808,10 +870,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="quz-9f-4u6"/>
+                    <connections>
+                        <outlet property="firstSearchBar" destination="ftk-uA-u35" id="Agi-po-NoS"/>
+                        <outlet property="navBar" destination="hfp-d8-qLe" id="Ag5-Wz-HVN"/>
+                        <outlet property="onetableView" destination="rPs-PG-wmG" id="pwZ-qZ-4yu"/>
+                        <outlet property="secondSearchBar" destination="0am-xC-QE5" id="TRh-S6-Ixf"/>
+                        <outlet property="secondtableView" destination="xuI-rX-97h" id="gOy-0O-aVO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sDX-dx-SgE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1053" y="338"/>
+            <point key="canvasLocation" x="1052" y="337.6847290640394"/>
         </scene>
         <!--Tab Barprofesor Controller View Controller-->
         <scene sceneID="FZX-BZ-fb2">
@@ -2018,6 +2087,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="224.66666666666666" height="38"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="didRequestNew:" destination="nIc-t2-fKG" eventType="touchUpInside" id="FiS-ok-Q3d"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2540,13 +2612,13 @@
         <image name="Teacher" width="25.333333969116211" height="25.333333969116211"/>
         <image name="User" width="15" height="15"/>
         <image name="agreement" width="25.333333969116211" height="25.333333969116211"/>
-        <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="calendar" width="25.333333969116211" height="25"/>
+        <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="entrada" width="500" height="500"/>
         <image name="group" width="25.333333969116211" height="25.333333969116211"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <namedColor name="AccentColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.6589999794960022" blue="0.76499998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Border">
             <color red="0.85100001096725464" green="0.85100001096725464" blue="0.85100001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

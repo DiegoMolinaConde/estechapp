@@ -87,6 +87,36 @@ class LoginPresenterDefault: LoginPresenter {
                     self?.session.saveUserInfo(response)
                     
                     // Desicion de navegación
+                    
+                    self?.getRooms(role: role)
+
+                case .failure(let error):
+                    self?.view?.showLoading(isActive: false)
+                    self?.view?.showError(message: error.localizedDescription)
+                }
+            }
+    }
+    
+    private func getRooms(role: SessionRole) {
+        let endpoint = EstechAppEndpoints.listRooms
+        
+        networkRequest
+            .setEndpoint(endpoint.path, .v5)
+            .setHttpMethod(endpoint.method)
+            .setParameter(endpoint.parameters)
+            .subscribeAndReceivedData{ [weak self] (result) in
+                switch result {
+                case .success(let dataRaw):
+                    guard let raw = dataRaw as? Data,
+                          let response = [GroupsResponse].decodeJsonData(raw) else {
+                        self?.view?.showLoading(isActive: false)
+                        self?.view?.showError(message: "Error al decodificar la respuesta del servidor")
+                        return
+                    }
+                    let items: [Room] = response.first?.timeTables?.map { raw in
+                        Room(id: raw.id ?? 0, roomId: raw.roomId ?? 0)
+                    } ?? []
+                    SessionManager.shared.rooms = items
                     self?.view?.showLoading(isActive: false)
                     switch role {
                     case .teacher:

@@ -1,17 +1,20 @@
 //
-//  GroupsPresenter.swift
+//  StudentGroupPresenter.swift
 //  EstechApp
 //
-//  Created by Junior Quevedo Gutiérrez  on 9/06/24.
+//  Created by Junior Quevedo Gutiérrez  on 13/06/24.
 //
-import BDRCoreNetwork
+
 import Foundation
-protocol GroupsPresenter: AnyObject {
-    var view: GroupsView? { get set }
+import BDRCoreNetwork
+import BDRModel
+protocol StudentGroupPresenter: AnyObject {
+    var view: StudentGroupView? { get set }
     func fetchGroups()
 }
-class GroupsPresenterDefault: GroupsPresenter {
-    weak var view: GroupsView?
+
+class StudentGroupPresenterDefault: StudentGroupPresenter {
+    weak var view: StudentGroupView?
     private let session: SessionManager
     private let networkRequest: BederrApiManager
 
@@ -46,10 +49,20 @@ class GroupsPresenterDefault: GroupsPresenter {
                         Group.init(
                             type: raw.name ?? "",
                             numberGroup: 0,
-                            numberStudents: raw.users?.count ?? 0, users: []
+                            numberStudents: raw.users?.count ?? 0,
+                            users: raw.users?.map({
+                                rawUser in
+                                User.init(
+                                    firstName: rawUser.name ?? "",
+                                    lastName: rawUser.lastname ?? "",
+                                    email: rawUser.email ?? "",
+                                    id: rawUser.id ?? 0,
+                                    role: ((rawUser.role ?? "") == "STUDENT") ? .student : .teacher
+                                )
+                            }) ?? []
                         )
                     }
-                    self?.view?.showGroups(grouos: items)
+                    self?.view?.showGroups(items)
                     self?.view?.showLoading(isActive: false)
                 case .failure(let error):
                     self?.view?.showErrorMessage(error.localizedDescription)

@@ -18,45 +18,13 @@
             endingLineNumber = "37"
             landmarkName = "IniciarSesion(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E0B8F56F-3AC7-4E0A-BDC6-A4BD81C1957A - e8089ec09d89008a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EstechApp.ViewController.IniciarSesion(Any) -&gt; ()"
-                  moduleName = "EstechApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/juniorquevedogutierrez/Documents/ios-projects/estechapp/estechapp/iOS/EstechApp/Presentation/Login/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "840">
-               </Location>
-               <Location
-                  uuid = "E0B8F56F-3AC7-4E0A-BDC6-A4BD81C1957A - e8089ec09d89008a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EstechApp.ViewController.IniciarSesion(Any) -&gt; ()"
-                  moduleName = "EstechApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/juniorquevedogutierrez/Documents/ios-projects/estechapp/estechapp/iOS/EstechApp/Presentation/Login/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "880">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "2653B7B9-510A-440D-99EE-83B7BCD37E8F"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EstechApp/Presentation/Login/LoginPresenter.swift"
@@ -78,42 +46,10 @@
             filePath = "EstechApp/Presentation/Login/LoginPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "getUserInfo(email:role:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "1E4D3E13-41C4-4996-90C4-4B47888D6EB0 - ac06b48ac3476413"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Any, Swift.Error&gt;) -&gt; () in EstechApp.LoginPresenterDefault.getUserInfo(email: Swift.String, role: EstechApp.SessionRole) -&gt; ()"
-                  moduleName = "EstechApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/juniorquevedogutierrez/Documents/ios-projects/estechapp/estechapp/iOS/EstechApp/Presentation/Login/LoginPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "99"
-                  endingLineNumber = "99"
-                  offsetFromSymbolStart = "2520">
-               </Location>
-               <Location
-                  uuid = "1E4D3E13-41C4-4996-90C4-4B47888D6EB0 - ac06b48ac3476413"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Any, Swift.Error&gt;) -&gt; () in EstechApp.LoginPresenterDefault.getUserInfo(email: Swift.String, role: EstechApp.SessionRole) -&gt; ()"
-                  moduleName = "EstechApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/juniorquevedogutierrez/Documents/ios-projects/estechapp/estechapp/iOS/EstechApp/Presentation/Login/LoginPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "99"
-                  endingLineNumber = "99"
-                  offsetFromSymbolStart = "2484">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -338,38 +274,6 @@
             endingLineNumber = "152"
             landmarkName = "didEditSelect(mentoring:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7B354CCB-13CB-4C88-8781-0EA07A0CFD77 - 148d1d3a02fd27ea"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #3 (__C.UIAlertAction) -&gt; () in EstechApp.MentoringViewController.didEditSelect(mentoring: EstechApp.Mentoring) -&gt; ()"
-                  moduleName = "EstechApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/juniorquevedogutierrez/Documents/ios-projects/estechapp/estechapp/iOS/EstechApp/Presentation/Mentorings/MentoringViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "148"
-                  endingLineNumber = "148"
-                  offsetFromSymbolStart = "1040">
-               </Location>
-               <Location
-                  uuid = "7B354CCB-13CB-4C88-8781-0EA07A0CFD77 - 148d1d3a02fd27ea"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #3 (__C.UIAlertAction) -&gt; () in EstechApp.MentoringViewController.didEditSelect(mentoring: EstechApp.Mentoring) -&gt; ()"
-                  moduleName = "EstechApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/juniorquevedogutierrez/Documents/ios-projects/estechapp/estechapp/iOS/EstechApp/Presentation/Mentorings/MentoringViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "148"
-                  endingLineNumber = "148"
-                  offsetFromSymbolStart = "1032">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -401,54 +305,6 @@
             startingLineNumber = "78"
             endingLineNumber = "78"
             landmarkName = "updateMentoring(mentoring:date:roomId:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "569EBA65-FC3A-4893-979F-AFE4BB6B5F36"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EstechApp/Presentation/Login/LoginPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "getUserInfo(email:role:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "63EB4633-6FAB-4CA1-AA5A-41F456C86C36"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EstechApp/Presentation/Login/LoginPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "getUserInfo(email:role:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "63DB370C-42DD-425E-9B66-035DC91F8BFE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EstechApp/Presentation/Login/LoginPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "getUserInfo(email:role:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -562,38 +418,6 @@
             endingLineNumber = "45"
             landmarkName = "fetchGroups()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F04D9922-A46C-4146-97CD-80848867DB9F - 490a4e890f301321"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Any, Swift.Error&gt;) -&gt; () in EstechApp.GroupsPresenterDefault.fetchGroups() -&gt; ()"
-                  moduleName = "EstechApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/juniorquevedogutierrez/Documents/ios-projects/estechapp/estechapp/iOS/EstechApp/Presentation/Groups/GroupsPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "428">
-               </Location>
-               <Location
-                  uuid = "F04D9922-A46C-4146-97CD-80848867DB9F - 3560a0360d4d6611"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (EstechApp.GroupsResponse) -&gt; EstechApp.Group in closure #1 (Swift.Result&lt;Any, Swift.Error&gt;) -&gt; () in EstechApp.GroupsPresenterDefault.fetchGroups() -&gt; ()"
-                  moduleName = "EstechApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/juniorquevedogutierrez/Documents/ios-projects/estechapp/estechapp/iOS/EstechApp/Presentation/Groups/GroupsPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "56">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -658,38 +482,6 @@
             endingLineNumber = "57"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8D3BB775-52B2-42FC-8A0C-9594117334F9 - b76bdca4c37feae9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EstechApp.GroupsViewController.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
-                  moduleName = "EstechApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/juniorquevedogutierrez/Documents/ios-projects/estechapp/estechapp/iOS/EstechApp/Presentation/Groups/GroupsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "656">
-               </Location>
-               <Location
-                  uuid = "8D3BB775-52B2-42FC-8A0C-9594117334F9 - b76bdca4c37feae9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EstechApp.GroupsViewController.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
-                  moduleName = "EstechApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/juniorquevedogutierrez/Documents/ios-projects/estechapp/estechapp/iOS/EstechApp/Presentation/Groups/GroupsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "148">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -945,6 +737,118 @@
             startingLineNumber = "57"
             endingLineNumber = "57"
             landmarkName = "fetchMentorings()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "258D6E0A-8DFF-4B9C-9B7D-BF84FAFA38FA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EstechApp/Presentation/FreeUsagesByStudent/FreeUsagesByStudentViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "didEditSelect()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B747F1E5-7819-4FA5-8EB7-62A4A745A93B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EstechApp/Presentation/FreeUsagesByStudent/FreeUsagesByStudentPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "createNewMentoring(date:roomId:teacher:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "112F0F72-CFDA-41D7-B951-79E920CBAB9F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EstechApp/Presentation/StudentGroups/StudentGroupViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "groups"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E31061B1-BBC3-48FC-8621-0437D9CC0F9F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EstechApp/Presentation/StudentGroups/StudentGroupPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "fetchGroups()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "63E46005-DE91-43F8-8F9B-06F20B29F104"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EstechApp/Presentation/StudentGroups/StudentGroupPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "fetchGroups()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0AB2D9E3-FBFA-4367-9D67-C3A15BEE5C56"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EstechApp/Presentation/Login/LoginPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "getRooms(role:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "89B05A95-C92A-44E0-93BC-D082E66A0359"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EstechApp/Presentation/Login/LoginPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "getRooms(role:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

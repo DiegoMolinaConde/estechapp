@@ -30,6 +30,7 @@ struct Person {
     let firstName: String
     let lastName: String
     
+    
     var fullName: String {
         firstName + " " + lastName
     }

@@ -20,7 +20,7 @@ struct MentoringTeacherResponse: Codable {
 struct StudentResponse: Codable {
     let email: String
     let id: Int
-    let lastName: String?
+    let lastname: String?
     let name: String?
 }
 
@@ -28,6 +28,6 @@ struct StudentResponse: Codable {
 struct TeacherResponse: Codable {
     let email: String
     let id: Int
-    let lastName: String?
+    let lastname: String?
     let name: String?
 }

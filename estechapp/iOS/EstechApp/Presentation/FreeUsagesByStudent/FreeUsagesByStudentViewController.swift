@@ -53,6 +53,7 @@ class FreeUsagesByStudentViewController: UIViewController {
     
     var teacherId: String? = nil
     var dateSelect: Date? = nil
+    var roomSelect: Room? = nil
     var auxtextField: UITextField?
     let presenter = FreeUsagesByStudentPresenterDefault()
     var teacherMentoring: [FreeUsages] = [] {
@@ -108,8 +109,18 @@ class FreeUsagesByStudentViewController: UIViewController {
                 return
             }
             
+            guard let safeRoom = self.roomSelect else {
+                self.showErrorMessage(message: "Seleccione un aula")
+                return
+            }
             
-            self.presenter.createNewMentoring(date: safeDate, roomId: "", teacher: "")        }
+            self.presenter.createNewMentoring(
+                date: safeDate,
+                roomId: safeRoom.roomId.description,
+                teacher: ""
+            )
+        }
+
         let alertActionCancel = UIAlertAction(title: "Cancelar", style: .destructive) { action in
             
         }
@@ -139,6 +150,10 @@ extension FreeUsagesByStudentViewController: UIPickerViewDataSource, UIPickerVie
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return "Aula #\(SessionManager.shared.rooms[row].id)"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        roomSelect = SessionManager.shared.rooms[row]
     }
     
     

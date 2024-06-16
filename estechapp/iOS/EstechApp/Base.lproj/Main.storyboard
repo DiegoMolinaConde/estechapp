@@ -34,7 +34,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="diego@escuelaestech.es" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PIk-P2-EAg">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="vanesa@escuelaestech.es" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PIk-P2-EAg">
                                         <rect key="frame" x="0.0" y="22" width="297" height="18.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -2612,8 +2612,8 @@
         <image name="Teacher" width="25.333333969116211" height="25.333333969116211"/>
         <image name="User" width="15" height="15"/>
         <image name="agreement" width="25.333333969116211" height="25.333333969116211"/>
-        <image name="calendar" width="25.333333969116211" height="25"/>
         <image name="calendar" catalog="system" width="128" height="107"/>
+        <image name="calendar" width="25.333333969116211" height="25"/>
         <image name="entrada" width="500" height="500"/>
         <image name="group" width="25.333333969116211" height="25.333333969116211"/>
         <image name="homekit" catalog="system" width="128" height="104"/>

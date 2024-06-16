@@ -50,8 +50,12 @@ class RequestMentoringByStudentViewController: UIViewController {
     @IBOutlet weak var navBar: CustomNavBar!
     @IBOutlet weak var tableView: UITableView!
     
-    var teacherId: String? = nil
+    
+    var teacherId: Person? = nil
+    var roomSelected: Room? = nil
     var dateSelect: Date? = nil
+    var pickerRoom: UIPickerView? = nil
+    var pickerTeacher: UIPickerView? = nil
     var auxtextField: UITextField?
     let presenter = RequestMentoringByStudentPresenterDefault()
     var teacherMentoring: [Mentoring] = [] {
@@ -86,36 +90,53 @@ class RequestMentoringByStudentViewController: UIViewController {
         hourPicker.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
         
         
-        let alert = UIAlertController(title: "Pedir tutoría", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Pedir tutoría", message: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
         
         alert.addTextField {(textField) in
             self.auxtextField = textField
             textField.inputView = hourPicker
             textField.placeholder = "Hora de la tutoría"
         }
-        alert.addTextField {(textField) in
-            textField.placeholder = "Profesor"
-        }
-        alert.addTextField {(textField) in
-            textField.placeholder = "Aula"
-        }
+      
+        let pickerView = UIPickerView(frame:
+            CGRect(x: 0, y: 50, width: 260, height: 162))
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        pickerView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+        alert.view.addSubview(pickerView)
+        pickerRoom = pickerView
+        
+        let pickerViewTeacher = UIPickerView(frame:
+            CGRect(x: 0, y: 210, width: 260, height: 162))
+        pickerViewTeacher.dataSource = self
+        pickerViewTeacher.delegate = self
+        pickerViewTeacher.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+        alert.view.addSubview(pickerViewTeacher)
+        pickerTeacher = pickerViewTeacher
+        
         let alertActionOk = UIAlertAction(title: "Confirmar", style: .default) { action in
             guard let safeDate = self.dateSelect else {
                 self.showErrorMessage(message: "Seleccione una fecha y hora")
                 return
             }
             
-            guard let teacher = alert.textFields?[1].text, !teacher.isEmpty else {
-                self.showErrorMessage(message: "Ingrese el Profesor")
+            guard let safeRoom = self.roomSelected else {
+                self.showErrorMessage(message: "Seleccione un aula")
                 return
             }
-            guard let room = alert.textFields?[2].text, !room.isEmpty else {
-                self.showErrorMessage(message: "Ingrese el Aula")
+            
+            guard let safeTeacher = self.teacherId else {
+                self.showErrorMessage(message: "Seleccione un profesor")
                 return
             }
             
             
-            self.presenter.createNewMentoring(date: safeDate, roomId: room, teacher: teacher)        }
+            self.presenter.createNewMentoring(
+                date: safeDate,
+                roomId: safeRoom.roomId.description,
+                teacher: safeTeacher.id.description
+            )
+        }
         let alertActionCancel = UIAlertAction(title: "Cancelar", style: .destructive) { action in
             
         }
@@ -130,6 +151,50 @@ class RequestMentoringByStudentViewController: UIViewController {
         dateSelect = sender.date
         auxtextField?.text = dateFormatter.string(from: sender.date)
     }
+    
+}
+
+extension RequestMentoringByStudentViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView == pickerRoom {
+            return SessionManager.shared.rooms.count
+        }
+        
+        if pickerView == pickerTeacher {
+            return SessionManager.shared.teachers.count
+        }
+        
+       return 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == pickerRoom {
+            return "Aula #\(SessionManager.shared.rooms[row].id)"
+        }
+        
+        if pickerView == pickerTeacher {
+            return "\(SessionManager.shared.teachers[row].fullName)"
+        }
+        
+        return "Aula #\(SessionManager.shared.rooms[row].id)"
+      
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == pickerRoom {
+            roomSelected = SessionManager.shared.rooms[row]
+        }
+        
+        if pickerView == pickerTeacher {
+            teacherId = SessionManager.shared.teachers[row]
+        }
+       // roomSelected = SessionManager.shared.rooms[row]
+    }
+    
     
 }
 

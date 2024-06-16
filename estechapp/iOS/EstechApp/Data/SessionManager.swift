@@ -17,7 +17,8 @@ class SessionManager {
     
     var role: SessionRole?
     var user: User?
-    
+    var rooms: [Room] = []
+    var teachers: [Person] = []
     func openSession(_ response: LoginResponse) {
         if response.roles.contains(where: { $0.authority == "ROLE_TEACHER" }) {
             role = .teacher

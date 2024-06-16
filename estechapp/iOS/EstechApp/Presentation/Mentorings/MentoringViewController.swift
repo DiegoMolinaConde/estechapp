@@ -73,11 +73,12 @@ class MentoringViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
-    var roomID: String? = nil
+    var roomSelect: Room? = nil
     var dateSelect: Date? = nil
     var auxtextField: UITextField?
     var presenter: MentoringPresenter = MentoringPresenterDefault()
-
+    
+    
     
     var mentorings: [Mentoring] = [] {
         didSet {
@@ -125,17 +126,24 @@ extension MentoringViewController: CellActionDelegate {
         hourPicker.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
 
 
-        let alert = UIAlertController(title: "Modificar tutoría", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Modificar tutoría", message: "\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
 
+        let pickerView = UIPickerView(frame:
+            CGRect(x: 0, y: 50, width: 260, height: 162))
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        pickerView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+        alert.view.addSubview(pickerView)
+        
+        
         alert.addTextField {(textField) in
             self.auxtextField = textField
             textField.inputView = hourPicker
             textField.placeholder = "Hora de la tutoría"
         }
         
-        alert.addTextField {(textField) in
-            textField.placeholder = "Aula"
-        }
+        
+    
       //  alert.view.addSubview(datePicker)
         let alertActionOk = UIAlertAction(title: "Confirmar", style: .default) { action in
             //actionBlock?()
@@ -145,14 +153,17 @@ extension MentoringViewController: CellActionDelegate {
                 return
             }
             
-            guard let room = alert.textFields?[1].text, !room.isEmpty else {
-                self.showErrorMessage(message: "Ingrese el aula")
+            guard let safeRoom = self.roomSelect else {
+                self.showErrorMessage(message: "Seleccione un aula")
                 return
             }
+            
+            
+           
             self.presenter.updateMentoring(
                 mentoring: mentoring,
                 date: safeDate,
-                roomId: room
+                roomId: safeRoom.roomId.description
             )
         }
         let alertActionCancel = UIAlertAction(title: "Cancelar", style: .destructive) { action in
@@ -182,17 +193,21 @@ extension MentoringViewController: CellActionDelegate {
         hourPicker.addTarget(self, action: #selector(handleDateTimePicker(sender:)), for: .valueChanged)
 
 
-        let alert = UIAlertController(title: "Asignar hora tutoría", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Asignar hora tutoría", message: "\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
 
+        let pickerView = UIPickerView(frame:
+            CGRect(x: 0, y: 50, width: 260, height: 162))
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        pickerView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+        alert.view.addSubview(pickerView)
+        
         alert.addTextField {(textField) in
             self.auxtextField = textField
             textField.inputView = hourPicker
             textField.placeholder = "Hora de la tutoría"
         }
         
-        alert.addTextField {(textField) in
-            textField.placeholder = "Aula"
-        }
       //  alert.view.addSubview(datePicker)
         let alertActionOk = UIAlertAction(title: "Confirmar", style: .default) { action in
             //actionBlock?()
@@ -202,14 +217,15 @@ extension MentoringViewController: CellActionDelegate {
                 return
             }
             
-            guard let room = alert.textFields?[1].text, !room.isEmpty else {
-                self.showErrorMessage(message: "Ingrese el aula")
+            guard let safeRoom = self.roomSelect else {
+                self.showErrorMessage(message: "Seleccione un aula")
                 return
             }
+            
             self.presenter.updateMentoring(
                 mentoring: mentoring,
                 date: safeDate,
-                roomId: room
+                roomId: safeRoom.roomId.description
             )
         }
         let alertActionCancel = UIAlertAction(title: "Cancelar", style: .destructive) { action in
@@ -230,6 +246,23 @@ extension MentoringViewController: CellActionDelegate {
      }
 }
 
+extension MentoringViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return SessionManager.shared.rooms.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "Aula #\(SessionManager.shared.rooms[row].id)"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        roomSelect = SessionManager.shared.rooms[row]
+    }
+}
 
 extension MentoringViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

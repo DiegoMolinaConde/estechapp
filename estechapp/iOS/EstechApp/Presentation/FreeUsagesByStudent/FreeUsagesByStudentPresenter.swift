@@ -77,7 +77,7 @@ class FreeUsagesByStudentPresenterDefault: FreeUsagesByStudentPresenter {
     
     
     func createNewMentoring(date: Date, roomId: String, teacher: String) {
-        guard let room = Int(roomId), let teacher = Int(teacher) else {
+        guard let room = Int(roomId) else {
            view?.showErrorMessage("Debes ingresar una aula válida")
             return
         }
@@ -87,16 +87,14 @@ class FreeUsagesByStudentPresenterDefault: FreeUsagesByStudentPresenter {
         guard let userID = session.user?.id else {
             return
         }
-        let endpoint = EstechAppEndpoints.createeMentoring(
+        let endpoint = EstechAppEndpoints.createFreeUsage(
             [
                 "start": dataDate,
                 "end": dataDate,
-                "roomId": room,
+                "room": ["id": roomId],
                 "status": "PENDING",
-                "teacher":
-                    ["id" : teacher],
-                "student":
-                    [ "id": userID]
+                "user":
+                    ["id" : userID]
             ]
         )
         
@@ -119,7 +117,7 @@ class FreeUsagesByStudentPresenterDefault: FreeUsagesByStudentPresenter {
     }
     
     func cancelMentoring(mentoring: FreeUsages) {
-        let endpoint = EstechAppEndpoints.updatePartialMentoring(id: mentoring.id,[
+        let endpoint = EstechAppEndpoints.updatePartialFreeUsage(id: mentoring.id,[
                                                                              "status": "DENIED"])
         view?.showLoading(isActive: true)
 

@@ -23,6 +23,10 @@ enum EstechAppEndpoints  {
     
     case freeUsagesByStudent(id: Int)
     case createFreeUsage(Parameters)
+    case updatePartialFreeUsage(id: Int, Parameters)
+    
+    case listRooms
+    case listTeachers
 
     var path: String {
         switch self {
@@ -50,6 +54,12 @@ enum EstechAppEndpoints  {
             return "api/free-usage/by-student/\(id)"
         case .createFreeUsage(_):
             return "api/free-usage"
+        case .updatePartialFreeUsage(id: let id, _):
+            return "api/free-usage/\(id)"
+        case .listRooms:
+            return "api/room"
+        case .listTeachers:
+            return "api/user/find-by-role/2"
         }
     }
 
@@ -69,6 +79,12 @@ enum EstechAppEndpoints  {
             return .get
         case .createFreeUsage(_):
             return .post
+        case .updatePartialFreeUsage(id: let id, _):
+            return .patch
+        case .listRooms:
+            return .get
+        case .listTeachers:
+            return .get
         }
     }
     
@@ -92,6 +108,12 @@ enum EstechAppEndpoints  {
             return nil
         case .createFreeUsage(let parameters):
             return parameters
+        case .updatePartialFreeUsage(id: _, let body):
+            return body
+        case .listRooms:
+            return nil
+        case .listTeachers:
+            return nil
         }
     }
 }

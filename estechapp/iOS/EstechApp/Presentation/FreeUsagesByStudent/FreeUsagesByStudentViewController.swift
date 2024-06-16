@@ -53,6 +53,7 @@ class FreeUsagesByStudentViewController: UIViewController {
     
     var teacherId: String? = nil
     var dateSelect: Date? = nil
+    var roomSelect: Room? = nil
     var auxtextField: UITextField?
     let presenter = FreeUsagesByStudentPresenterDefault()
     var teacherMentoring: [FreeUsages] = [] {
@@ -87,42 +88,47 @@ class FreeUsagesByStudentViewController: UIViewController {
         hourPicker.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
         
         
-        let alert = UIAlertController(title: "Pedir tutoría", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Pedir práctica libre", message: "\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
         
+        let pickerView = UIPickerView(frame:
+            CGRect(x: 0, y: 50, width: 260, height: 162))
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        pickerView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+        alert.view.addSubview(pickerView)
+
         alert.addTextField {(textField) in
             self.auxtextField = textField
             textField.inputView = hourPicker
-            textField.placeholder = "Hora de la tutoría"
+            textField.placeholder = "Día de la práctica libre"
         }
-        alert.addTextField {(textField) in
-            textField.placeholder = "Profesor"
-        }
-        alert.addTextField {(textField) in
-            textField.placeholder = "Aula"
-        }
+
         let alertActionOk = UIAlertAction(title: "Confirmar", style: .default) { action in
             guard let safeDate = self.dateSelect else {
                 self.showErrorMessage(message: "Seleccione una fecha y hora")
                 return
             }
             
-            guard let teacher = alert.textFields?[1].text, !teacher.isEmpty else {
-                self.showErrorMessage(message: "Ingrese el Profesor")
-                return
-            }
-            guard let room = alert.textFields?[2].text, !room.isEmpty else {
-                self.showErrorMessage(message: "Ingrese el Aula")
+            guard let safeRoom = self.roomSelect else {
+                self.showErrorMessage(message: "Seleccione un aula")
                 return
             }
             
-            
-            self.presenter.createNewMentoring(date: safeDate, roomId: room, teacher: teacher)        }
+            self.presenter.createNewMentoring(
+                date: safeDate,
+                roomId: safeRoom.roomId.description,
+                teacher: ""
+            )
+        }
+
         let alertActionCancel = UIAlertAction(title: "Cancelar", style: .destructive) { action in
             
         }
         alert.addAction(alertActionOk)
         alert.addAction(alertActionCancel)
-        self.present(alert, animated: true)
+        self.present(alert, animated: true, completion: { 
+            pickerView.frame.size.width = alert.view.frame.size.width
+        })
     }
     
     @objc func handleDatePicker(sender: UIDatePicker) {
@@ -133,7 +139,25 @@ class FreeUsagesByStudentViewController: UIViewController {
     }
     
 }
-
+extension FreeUsagesByStudentViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return SessionManager.shared.rooms.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "Aula #\(SessionManager.shared.rooms[row].id)"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        roomSelect = SessionManager.shared.rooms[row]
+    }
+    
+    
+}
 
 extension FreeUsagesByStudentViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -56,13 +56,13 @@ class MentoringPresenterDefault: MentoringPresenter {
                                 id: rawData.student?.id ?? 0,
                                 email: rawData.student?.email ?? "",
                                 firstName: rawData.student?.name ?? "",
-                                lastName: rawData.student?.lastName ?? ""
+                                lastName: rawData.student?.lastname ?? ""
                             ),
                             teacher: .init(
                                 id: rawData.teacher?.id ?? 0,
                                 email: rawData.teacher?.email ?? "",
                                 firstName: rawData.teacher?.name ?? "",
-                                lastName: rawData.teacher?.lastName ?? ""
+                                lastName: rawData.teacher?.lastname ?? ""
                             )
                         )
                     }

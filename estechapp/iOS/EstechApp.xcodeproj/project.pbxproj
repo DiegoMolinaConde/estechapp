@@ -42,6 +42,9 @@
 		AD0BD0152C0F7F4E003BFA09 /* MentoringBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0BD0142C0F7F4E003BFA09 /* MentoringBuilder.swift */; };
 		AD0BD0502C154A9E003BFA09 /* MentoringStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0BD04F2C154A9E003BFA09 /* MentoringStudentViewController.swift */; };
 		AD0BD0522C154B36003BFA09 /* MentoringStudentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0BD0512C154B36003BFA09 /* MentoringStudentPresenter.swift */; };
+		AD57F95E2C1BE6ED008624DC /* StudentGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD57F95D2C1BE6ED008624DC /* StudentGroupViewController.swift */; };
+		AD57F9602C1BE6F9008624DC /* StudentGroupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD57F95F2C1BE6F9008624DC /* StudentGroupPresenter.swift */; };
+		AD57F9622C1CA9DC008624DC /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD57F9612C1CA9DC008624DC /* Room.swift */; };
 		AD96B5712BF7BA9400378E6B /* Mentoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD96B5702BF7BA9400378E6B /* Mentoring.swift */; };
 		AD96B5732BF7BB3600378E6B /* MentoringTeacherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD96B5722BF7BB3600378E6B /* MentoringTeacherResponse.swift */; };
 		AD96B5762BF7BD4000378E6B /* MentoringTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD96B5752BF7BD4000378E6B /* MentoringTableViewCell.swift */; };
@@ -92,6 +95,9 @@
 		AD0BD0142C0F7F4E003BFA09 /* MentoringBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentoringBuilder.swift; sourceTree = "<group>"; };
 		AD0BD04F2C154A9E003BFA09 /* MentoringStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentoringStudentViewController.swift; sourceTree = "<group>"; };
 		AD0BD0512C154B36003BFA09 /* MentoringStudentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentoringStudentPresenter.swift; sourceTree = "<group>"; };
+		AD57F95D2C1BE6ED008624DC /* StudentGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentGroupViewController.swift; sourceTree = "<group>"; };
+		AD57F95F2C1BE6F9008624DC /* StudentGroupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentGroupPresenter.swift; sourceTree = "<group>"; };
+		AD57F9612C1CA9DC008624DC /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		AD96B5702BF7BA9400378E6B /* Mentoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mentoring.swift; sourceTree = "<group>"; };
 		AD96B5722BF7BB3600378E6B /* MentoringTeacherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentoringTeacherResponse.swift; sourceTree = "<group>"; };
 		AD96B5752BF7BD4000378E6B /* MentoringTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentoringTableViewCell.swift; sourceTree = "<group>"; };
@@ -223,6 +229,7 @@
 				AD96B5702BF7BA9400378E6B /* Mentoring.swift */,
 				AD0BCFFC2C0794C8003BFA09 /* Group.swift */,
 				ADA67D3B2C18F14D00308A09 /* FreeUsages.swift */,
+				AD57F9612C1CA9DC008624DC /* Room.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -273,6 +280,15 @@
 			path = MentoringStudent;
 			sourceTree = "<group>";
 		};
+		AD57F95C2C1BE6D9008624DC /* StudentGroups */ = {
+			isa = PBXGroup;
+			children = (
+				AD57F95D2C1BE6ED008624DC /* StudentGroupViewController.swift */,
+				AD57F95F2C1BE6F9008624DC /* StudentGroupPresenter.swift */,
+			);
+			path = StudentGroups;
+			sourceTree = "<group>";
+		};
 		AD96B5742BF7BD1900378E6B /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +316,7 @@
 		AD9B443B2BEDCF7000312BD6 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				AD57F95C2C1BE6D9008624DC /* StudentGroups */,
 				ADA67D342C18F02B00308A09 /* FreeUsagesByStudent */,
 				ADD6472A2C18B59C003DA3E3 /* RequestMentoringByStudent */,
 				ADD647272C16B429003DA3E3 /* GroupsUsers */,
@@ -444,6 +461,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD57F95E2C1BE6ED008624DC /* StudentGroupViewController.swift in Sources */,
 				AD086EDC2BF1BA6F00BEC852 /* User.swift in Sources */,
 				AD9B443A2BEDC45900312BD6 /* UIView+Extensions.swift in Sources */,
 				AD0BD0112C0F7C12003BFA09 /* MentoringViewController.swift in Sources */,
@@ -453,6 +471,7 @@
 				AD086EDA2BF1B85300BEC852 /* SessionManager.swift in Sources */,
 				ADD647262C16AB5A003DA3E3 /* GroupsPresenter.swift in Sources */,
 				AD086EEB2BF1CC8800BEC852 /* CheckInResponse.swift in Sources */,
+				AD57F9622C1CA9DC008624DC /* Room.swift in Sources */,
 				80DA0F882BD5594F004EBED3 /* ModeloLogin.swift in Sources */,
 				AD086EF52BF1D47500BEC852 /* Fichaje.swift in Sources */,
 				AD086EC42BF1ADE900BEC852 /* CustomNavBar.swift in Sources */,
@@ -479,6 +498,7 @@
 				AD0BCFFB2C07935F003BFA09 /* GroupsViewController.swift in Sources */,
 				AD9B443F2BEDCFAD00312BD6 /* FichajeViewController.swift in Sources */,
 				AD086EE12BF1BDF100BEC852 /* LoginBuilder.swift in Sources */,
+				AD57F9602C1BE6F9008624DC /* StudentGroupPresenter.swift in Sources */,
 				ADD6472E2C18B5BE003DA3E3 /* RequestMentoringByStudentPresenter.swift in Sources */,
 				AD086ED82BF1B67A00BEC852 /* EstechAppEndpoints.swift in Sources */,
 				AD086EDF2BF1BDD500BEC852 /* SplashInitViewController.swift in Sources */,

@@ -60,13 +60,13 @@ class RequestMentoringByStudentPresenterDefault: RequestMentoringByStudentPresen
                                 id: rawData.teacher?.id ?? 0,
                                 email: rawData.teacher?.email ?? "",
                                 firstName: rawData.teacher?.name ?? "",
-                                lastName: rawData.teacher?.lastName ?? ""
+                                lastName: rawData.teacher?.lastname ?? ""
                             ),
                             teacher: .init(
                                 id: rawData.teacher?.id ?? 0,
                                 email: rawData.teacher?.email ?? "",
                                 firstName: rawData.teacher?.name ?? "",
-                                lastName: rawData.teacher?.lastName ?? ""
+                                lastName: rawData.teacher?.lastname ?? ""
                             )
                         )
                     }

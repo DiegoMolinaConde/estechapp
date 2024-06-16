@@ -39,7 +39,7 @@ class MentoringStudentTableViewCell: UITableViewCell {
             data.date,
             withFormat: kHour24Formatter
         )
-        nameStudentLabel.text = "Estudiante \(data.student.fullName)"
+        nameStudentLabel.text = "\(data.student.fullName)"
         roomNameLabel.text = "Aula N# \(data.roomId)"
     }
 

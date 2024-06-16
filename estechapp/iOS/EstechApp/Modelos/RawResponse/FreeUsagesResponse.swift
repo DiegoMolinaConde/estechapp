@@ -27,8 +27,6 @@ struct FreeUsagesTimetables: Codable {
     let id: Int
     let status: String?
     let start: String?
-    let dayOfWeek: String?
-    let reccurence: String?
     let roomId: Int?
     
 }

@@ -30,12 +30,13 @@ struct GroupsResponse: Codable {
 struct TimeTable: Codable {
     let id, schoolGroupID, moduleID: Int?
     let start, end, weekday: String?
-
+    let roomId: Int?
     enum CodingKeys: String, CodingKey {
         case id
         case schoolGroupID
         case moduleID
         case start, end, weekday
+        case roomId
     }
 }
 
